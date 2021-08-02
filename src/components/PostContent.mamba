@@ -1,0 +1,14 @@
+{ crel } = require 'teact'
+{ useState, Fragment } = require 'react'
+$ = crel
+
+PostContent= (props) ->
+  { post } = props
+  return (
+    $ Fragment , =>
+      $ 'h1', post.data.title
+      $ 'h3', post.data.subTitle
+      $ 'div', className: 'container', dangerouslySetInnerHTML: { __html: post.content }
+  )
+
+module.exports = PostContent

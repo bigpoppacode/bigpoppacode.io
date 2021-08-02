@@ -1,0 +1,6 @@
+T = require 'teact'
+ReactDOM = require 'react-dom'
+App = require './components/App.mamba'
+{ crel } = require 'teact'
+
+ReactDOM.render((crel App), document.getElementById('app'))

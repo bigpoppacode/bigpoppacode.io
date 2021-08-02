@@ -1,0 +1,64 @@
+@import "core/neat";
+
+$mamba-extra-small-breakpoint: '(max-width: 575.9999999999px)';
+$mamba-small-breakpoint: '(min-width: 576px)';
+$mamba-medium-breakpoint: '(min-with: 768px)';
+$mamba-large-breakpoint: '(min-width: 992px)';
+$mamba-extra-large-breakpoint: '(min-width: 1200px)';
+$mamba-double-xl-breakpoint: '(min-width: 1400px)';
+
+$mamba-mq-types: (
+  extra-small: 'screen and #{$mamba-extra-small-breakpoint}',
+  small: 'screen and #{$mamba-small-breakpoint}',
+  medium: 'screen and #{$mamba-medium-breakpoint}',
+  large: 'screen and #{$mamba-large-breakpoint}',
+  extra-large: 'screen and #{$mamba-extra-large-breakpoint}',
+  x-extra-large: 'screen and #{$mamba-double-xl-breakpoint}'
+);
+
+$mamba-grid-xs: (
+  columns: 4,
+  gutter: 1rem,
+  media: #{
+    map-get($mamba-mq-types, extra-small)
+  }
+);
+
+$mamba-grid-sm: (
+  columns: 4,
+  gutter: 1rem,
+  media: #{
+    map-get($mamba-mq-types, small)
+  }
+);
+
+$mamba-grid-md: (
+  columns: 8,
+  gutter: 1.5rem,
+  media: #{
+    map-get($mamba-mq-types, medium)
+  }
+);
+
+$mamba-grid-lg: (
+  columns: 12,
+  gutter: 1.5rem,
+  media: #{
+    map-get($mamba-mq-types, large)
+  }
+);
+
+$mamba-grid-xl: (
+  columns: 12,
+  gutter: 1.5rem,
+  media: #{
+    map-get($mamba-mq-types, extra-large)
+  }
+);
+$mamba-grid-xxl: (
+  columns: 12,
+  gutter: 1.5rem,
+  media: #{
+    map-get($mamba-mq-types, x-extra-large)
+  }
+);

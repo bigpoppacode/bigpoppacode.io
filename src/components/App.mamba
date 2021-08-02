@@ -1,0 +1,72 @@
+{ crel } = require 'teact'
+{ useState, useEffect } = require 'react'
+$ = crel
+PostContent = require './PostContent.mamba'
+
+
+App = ->
+  [state, setState] = useState({})
+  fetchPost = ->
+    fetch('/api/first-post')
+      .then((response)->
+        response.json()
+      ).then((data)->
+        setState(data)
+      ).catch((err)->
+        console.error(err)
+      )
+    return (-> null)
+  useEffect(fetchPost, [])
+
+  return (
+    unless Object.keys(state).length
+      $ 'h1', 'Loading ...'
+    else
+      $ PostContent, post: state
+  )
+
+###
+App = ->
+  [ state, setState ] = useState({ name: '', age: '' })
+  handleChange = (e) =>
+    newState = {}
+    newState[e.target.id] = e.target.value
+    setState(Object.assign({}, state, newState))
+  return (
+    $ 'div', className: 'container', =>
+      $ 'form', className: 'task-form', =>
+        $ 'h1', {onClick: (e) -> alert 'i have been clicked'}, 'Hello World'
+        $ 'label', =>
+          $.text 'Name'
+          $ 'input', { id: 'name', type: 'text', onChange: handleChange, value: state.name }
+        $ 'label', =>
+          $.text 'Age'
+          $ 'input', { id: 'age', type:'text', onChange: handleChange, value: state.age }
+        $ 'button', 'Click Me For No Reason'
+      $ 'h2', "#{state.name} is #{state.age}")
+###
+
+module.exports = App
+### blueprint App inheritsFrom Component
+  constructor: (props)->
+    @state =
+      name: 'Arthur'
+      age: 33
+
+  handleChange: (e) =>
+    newState = {}
+    newState[e.target.id] = e.target.value
+    @setState(newState)
+
+  render: ->
+    $ 'div', className: 'container', =>
+      $ 'form', className: 'task-form', =>
+        $ 'h1', {onClick: (e) -> alert 'i have been clicked'}, 'Hello World'
+        $ 'label', =>
+          $.text 'Name'
+          $ 'input', { id: 'name', type: 'text', onChange: @handleChange, value: @state.name }
+        $ 'label', =>
+          $.text 'Age'
+          $ 'input', { id: 'age', type:'text', onChange: @handleChange, value: @state.age }
+        $ 'button', 'Click Me For No Reason'
+      $ 'h2', "#{@state.name} is #{@state.age}" ###

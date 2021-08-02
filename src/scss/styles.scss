@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import "reset";
+@import "bs";
+@import "grid";
+
+$custom-colors: (
+  "elegant-purple": #8E6E95,
+  "blue-green": #39A59C,
+  "midnight-blue": #344759,
+  "bright-orange": #E8741E
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+$primary: #fE6E9f;
+
+body {
+  line-height: 1;
+  background: white;
+  color: $primary;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  .task-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &>*{
+      margin-bottom: .8rem;
+    }
+    h1 {
+      align-self: center;
+      text-align: center;
+    }
+    label{
+      display: flex;
+      justify-content: center;
+      span{
+      background-color: $primary;
+      color: white;
+      display: block;
+      padding: .2rem 1rem;
+    }
+    }
+  }
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 50px;
+}
