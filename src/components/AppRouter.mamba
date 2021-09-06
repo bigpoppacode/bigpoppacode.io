@@ -1,0 +1,15 @@
+Decision = require 'mambascript/decision'
+React = require 'react'
+{ useState, useEffect } = require 'react'
+$ = Decision(React).$
+{ BrowserRouter, Switch, Route } = require 'react-router-mambascript'
+App = require './App.mamba'
+Show = require './Show.mamba'
+
+AppRouter = (props)->
+  $ BrowserRouter, =>
+    $ Switch, =>
+      $ Route, { exact: on, path: '/', component: (routerProps) -> $ App, Object.assign({}, routerProps) }
+      $ Route, { path: '/:id', component: (routerProps) -> $ Show, Object.assign({}, routerProps) }
+
+module.exports = AppRouter

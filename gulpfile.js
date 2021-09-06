@@ -55,6 +55,7 @@ gulp.task('default', (cb) => {
 	// SET UP WATCJERS TO LISTEN TO CHANGES IN FILES
  	gulp.watch('./src/scss/**/*',  gulp.task('styles'));
 	gulp.watch('./src/**/*.mamba', gulp.task('webpack'));
+	gulp.watch('./api/**/*.md', gulp.task('webpack'));
 	gulp.watch('./src/*.html', gulp.task('webpack'))
 	// LISTEN FOR WHEN TO RELOAD PAGES
 	gulp

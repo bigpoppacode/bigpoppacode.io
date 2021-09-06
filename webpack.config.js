@@ -19,6 +19,16 @@ module.exports = env => {
 					test: /\.mamba$/,
 					exclude: /node_modules/,
 					use: ['mambascript-loader']
+				},
+				{
+		      test: /\.m?js$/,
+		      exclude: /(node_modules|bower_components)/,
+		      use: {
+		        loader: 'babel-loader',
+		        options: {
+		          presets: ['@babel/preset-env']
+		        }
+		      }
 				}
 			]
 		},
@@ -27,7 +37,7 @@ module.exports = env => {
 			new HtmlWebpackPlugin({
 				inject: true,
 				hash: true,
-				template: './src/index.html',
+				template: './src/template.html',
 				children: false,
 				filename: '../../index.html'
 			}),

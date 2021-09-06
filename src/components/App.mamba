@@ -1,28 +1,32 @@
-{ crel } = require 'teact'
+Decision = require 'mambascript/decision'
+React = require 'react'
 { useState, useEffect } = require 'react'
-$ = crel
+$ = Decision(React).$
 PostContent = require './PostContent.mamba'
 
 
+
 App = ->
-  [state, setState] = useState({})
+  [state, setState] = useState([])
   fetchPost = ->
-    fetch('/api/first-post')
+    fetch('/api/posts')
       .then((response)->
         response.json()
       ).then((data)->
         setState(data)
       ).catch((err)->
-        console.error(err)
+        present err
       )
     return (-> null)
   useEffect(fetchPost, [])
 
   return (
-    unless Object.keys(state).length
+    unless state.length
       $ 'h1', 'Loading ...'
     else
-      $ PostContent, post: state
+      $ 'div', state.map((item)->
+       $ PostContent, { post: item }
+      )
   )
 
 ###
