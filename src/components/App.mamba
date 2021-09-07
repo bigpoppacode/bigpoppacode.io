@@ -1,9 +1,8 @@
-Decision = require 'mambascript/decision'
 React = require 'react'
 { useState, useEffect } = require 'react'
-$ = Decision(React).$
+{ $, pureComponent } = require('mambascript/decision')(React)
 PostContent = require './PostContent.mamba'
-
+AppLayout = require './AppLayout.mamba'
 
 
 App = ->
@@ -18,59 +17,20 @@ App = ->
         present err
       )
     return (-> null)
+
   useEffect(fetchPost, [])
 
+  Posts = pureComponent (data) ->
+    data.map((item) ->
+      $ PostContent, { post: item }
+    )
+
   return (
-    unless state.length
-      $ 'h1', 'Loading ...'
-    else
-      $ 'div', state.map((item)->
-       $ PostContent, { post: item }
-      )
+    $ AppLayout, =>
+      unless state.length
+        return $ 'h1', 'Loading ...'
+      else
+        $ 'div', Posts(state)
   )
 
-###
-App = ->
-  [ state, setState ] = useState({ name: '', age: '' })
-  handleChange = (e) =>
-    newState = {}
-    newState[e.target.id] = e.target.value
-    setState(Object.assign({}, state, newState))
-  return (
-    $ 'div', className: 'container', =>
-      $ 'form', className: 'task-form', =>
-        $ 'h1', {onClick: (e) -> alert 'i have been clicked'}, 'Hello World'
-        $ 'label', =>
-          $.text 'Name'
-          $ 'input', { id: 'name', type: 'text', onChange: handleChange, value: state.name }
-        $ 'label', =>
-          $.text 'Age'
-          $ 'input', { id: 'age', type:'text', onChange: handleChange, value: state.age }
-        $ 'button', 'Click Me For No Reason'
-      $ 'h2', "#{state.name} is #{state.age}")
-###
-
 module.exports = App
-### blueprint App inheritsFrom Component
-  constructor: (props)->
-    @state =
-      name: 'Arthur'
-      age: 33
-
-  handleChange: (e) =>
-    newState = {}
-    newState[e.target.id] = e.target.value
-    @setState(newState)
-
-  render: ->
-    $ 'div', className: 'container', =>
-      $ 'form', className: 'task-form', =>
-        $ 'h1', {onClick: (e) -> alert 'i have been clicked'}, 'Hello World'
-        $ 'label', =>
-          $.text 'Name'
-          $ 'input', { id: 'name', type: 'text', onChange: @handleChange, value: @state.name }
-        $ 'label', =>
-          $.text 'Age'
-          $ 'input', { id: 'age', type:'text', onChange: @handleChange, value: @state.age }
-        $ 'button', 'Click Me For No Reason'
-      $ 'h2', "#{@state.name} is #{@state.age}" ###

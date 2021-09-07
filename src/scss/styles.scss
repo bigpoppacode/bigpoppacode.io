@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Overpass:300,600");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Grand+Hotel");
 @import "reset";
 @import "bs";
 @import "grid";
@@ -11,12 +14,31 @@ $custom-colors: (
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
-$primary: #fE6E9f;
+$primary: hsl(356, 100%, 66%);
+$lightRedCTA: hsl(355, 100%, 74%);
+$veryDarkBlue: hsl(208, 49%, 24%);
+$whiteText: hsl(0, 0%, 100%);
+$footerText: hsl(240, 2%, 79%);
+$bodyCopy: hsl(207, 13%, 34%);
+$footerBackground: hsl(240, 10%, 16%);
+$elegant-purple: #8E6E95;
 
+/* Gradient */
+$veryLightRed: hsl(13, 100%, 72%);
+$lightRed: hsl(353, 100%, 62%);
+$veryDarkGrayBlue: hsl(237, 17%, 21%);
+$veryDarkDesaturatedBlue: hsl(237, 23%, 32%);
+
+a, a:link, a:visited {
+  text-decoration: none;
+  color: $whiteText;
+  z-index: 2;
+}
 body {
   line-height: 1;
   background: white;
-  color: $primary;
+  color: $whiteText;
+  background-color: rgba(37, 28, 5, 0.6);
 }
 
 ol,
@@ -66,9 +88,129 @@ body {
     }
     }
   }
+  .card {
+    background-color: rgba(37, 28, 5, 0.6);
+  }
 }
 
 h1 {
   font-weight: 100;
   font-size: 50px;
+}
+
+.app-header{
+  min-width: 100vw;
+  min-height: 500px;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('/img/main.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $whiteText;
+  @include grid-media($mamba-grid-xs) {
+    height: 100vh;
+  }
+  .cover {
+    background-color: rgba(37, 28, 5, 0.6);
+    position: fixed;
+    opacity: 1;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    min-height: 500px;
+    height: 100%;
+    z-index: 1;
+  }
+  h1 {
+    font-family: 'Grand Hotel', cursive;
+    font-weight: 500;
+    font-size: 5rem;
+    color: ghostwhite;
+    z-index: 2;
+    @include grid-media($mamba-grid-xs) {
+      font-size: 2rem;
+    }
+  }
+  .subTitle {
+    font-weight: 600;
+    z-index: 2;
+    @include grid-media($mamba-grid-xs) {
+      font-size: 1rem;
+    }
+  }
+  .motto {
+    font-family: 'Overpass', sans-serif;
+    color: $whiteText;
+    z-index: 2;
+    text-align: center;
+    @include grid-media($mamba-grid-xs) {
+      font-size: 1.25rem;
+    }
+  }
+  .subscribe {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 8px 16px rgba(37, 28, 5, 0.6);
+    background-color: rgba(37, 28, 5, 0.6);
+    padding: 2rem;
+    margin: 1rem;
+    box-sizing: border-box;
+    .container{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+/* Nav Bar
+$ 'nav', { className: 'navbar card'}, =>
+  $ 'ul', { classNam: 'nav-items container'}, =>
+    $ 'li', { className: 'nav-item' }, =>
+      $.text 'Home'
+    $ 'li', { className: 'nav-item' }, =>
+      $.text 'About'
+    $ 'li', { className: 'nav-item' }, =>
+      $.text 'Contact Us'
+    $ 'li', { className: 'nav-item' }, =>
+      $.text 'Posts'
+*/
+
+.appnav{
+  background-color: rgba(37, 28, 5, 0.6);
+  box-shadow: 4px 8px 16px rgba(37, 28, 5, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  @include grid-media($mamba-grid-xs) {
+    display: none;
+  }
+  .nav-items{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 2.2rem;
+    text-decoration: none;
+    list-style: none;
+    flex-direction: row;
+
+    .nav-item {
+      flex-basis: 25%;
+      text-align: center;
+      height: 100%;
+    }
+  }
 }

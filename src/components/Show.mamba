@@ -24,7 +24,7 @@ Show = (props)->
     unless Object.keys(state).length
       $ 'h1', 'Loading ...'
     else
-      $ 'main',{ className: 'container' }, =>
+      $ 'main', { className: 'container' }, =>
        $ FullBlog, { post: state }
        $ Link, { to: '/' }, =>
          $.text 'Home Page'

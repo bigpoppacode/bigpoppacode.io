@@ -1,0 +1,17 @@
+React = require 'react'
+{ useState, useEffect } = require 'react'
+{ $, pureComponent } = require('mambascript/decision')(React)
+
+AppNavBar = ->
+  $ 'nav', { className: 'appnav'}, =>
+    $ 'ul', { className: 'nav-items container'}, =>
+      $ 'li', { className: 'nav-item' }, =>
+        $.text 'Home'
+      $ 'li', { className: 'nav-item' }, =>
+        $.text 'About'
+      $ 'li', { className: 'nav-item' }, =>
+        $.text 'Contact Us'
+      $ 'li', { className: 'nav-item' }, =>
+        $.text 'Posts'
+
+module.exports = AppNavBar

@@ -46,6 +46,7 @@ gulp.task('default', (cb) => {
  });
  // SERVE  FRONT END WITH PROXY TO BACKEND
 	browserSync.init({
+	 open: true,
 	 proxy: {
 		 target: 'http://localhost:8000',
 		 ws: true
@@ -62,8 +63,9 @@ gulp.task('default', (cb) => {
 		.watch([
 			'./public/**/*',
 			'./public/*',
-			'./public/js/**/.#*js',
-			'./public/css/**/.#*css'
+			'./public/js/dist/**/.#*js',
+			'./public/css/**/.#*css',
+			'./json/**/*'
 		])
 		.on('change', reload);
 		cb()
