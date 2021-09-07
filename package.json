@@ -12,6 +12,7 @@
     "dev:webpack": "webpack --mode development --env.NODE_ENV=dev",
     "build:webpack": "webpack --mode production --env.NODE_ENV=production",
     "dev": "gulp",
+    "create": "node create.js",
     "styles": "gulp styles",
     "start": "mamba server.mamba"
   },
