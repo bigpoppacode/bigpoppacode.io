@@ -1,0 +1,74 @@
+require('dotenv').config()
+Mamba = require 'mambascript'
+Mamba.register()
+{ MambaView } = Mamba
+express = require 'express'
+app = express()
+fs = require 'fs'
+path = require 'path'
+json = "#{__dirname}/json"
+PORT = process.env.PORT || 8000
+matter = require 'gray-matter'
+showdown  = require 'showdown'
+converter = new showdown.Converter()
+mongoose = require 'mongoose'
+
+MONGODB_URI = process.env.MONGO_URI
+db = mongoose.connection
+
+mongoose.connect MONGODB_URI, {
+    useNewUrlParser: true
+    useUnifiedTopology: true
+}
+
+db.on 'open', -> present 'Connected to Mongo'
+
+
+# Middleware
+app.use express.json()
+app.set 'views', './views'
+app.set 'view engine', 'mamba'
+app.engine 'mamba', ( filepath, options, callback ) ->
+  content = require filepath
+  rendered = MambaView.render content, hardcode: { props: options }
+  return callback null, rendered
+
+
+
+app.get '/', (req, res) ->
+  fs.readFile "#{json}/all.json", 'utf8', (err, file) ->
+    if err
+      console.error(err)
+    else
+      res.render 'Index', {
+        posts: JSON.parse(file)
+      }
+
+
+
+# Controller Goes Here Remove the test
+app.get '/api/posts', (req, res) ->
+  fs.readFile "#{json}/all.json", 'utf8', (err, file) ->
+    if err
+      console.error(err)
+    else
+      res.status(200).json(JSON.parse(file))
+
+
+app.get '/api/:post', (req, res) ->
+  fs.readFile "#{json}/#{req.params.post}.json", 'utf8', (err, file) ->
+    if err
+      console.error(err)
+    else
+      res.status(200).json(JSON.parse(file))
+
+app.use express.static('public')
+
+###
+# Controller Ends here
+app.get '*', (req, res) ->
+  res.sendFile path.resolve("#{__dirname}/public/index.html"
+###
+
+# LISTENER
+app.listen PORT, -> present "API Listening on port #{PORT}"

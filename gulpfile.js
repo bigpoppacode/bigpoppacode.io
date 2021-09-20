@@ -41,12 +41,13 @@ gulp.task('default', (cb) => {
 	});
 	// SERVE BACKEND
 	nodemon({
-	 script: 'server.js',
-	 env: { 'NODE_ENV': 'development'}
+		script: 'server.mamba',
+    env: { 'NODE_ENV': 'development'},
+		ext: 'mamba'
  });
  // SERVE  FRONT END WITH PROXY TO BACKEND
 	browserSync.init({
-	 open: true,
+	 open: false,
 	 proxy: {
 		 target: 'http://localhost:8000',
 		 ws: true

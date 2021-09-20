@@ -1,0 +1,57 @@
+module.exports = ->
+  doctype 5
+  html ->
+    head ->
+      meta charset: 'utf-8'
+      title 'Deeper Than Code'
+      link { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons' }
+      link { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' }
+      link { href: '/css/styles.css',  rel: 'stylesheet' }
+    body ->
+      header { class: 'app-header'}, =>
+        h1 'Deeper Than Code'
+        h4 { class: 'subTitle' },'Built with MambaScript'
+        div { class: 'cover' }
+        h4 { class: 'motto' }, =>
+          span '''
+          "Most people never run far enough on their first wind to find out they’ve got a second.
+          Give your dreams all you’ve got and you’ll be amazed at the energy that comes out of you."
+                                            - William James'''
+        div { class: 'subscribe'}, =>
+          h5 { class: 'info-text' }, 'Subscribe For Updates, delivered straight to your inbox'
+          div { class: 'container' }, =>
+            div { class: 'col-md-4 col-md-offset-4 col-sm6-6 col-sm-offset-3' }, =>
+              form { class: 'form-inline'}, =>
+                div { class: 'form-group' }, =>
+                  label { htmlFor: 'email' }, 'Email Address'
+                  input { name: 'email', type:'email', id: 'email', class: 'form-control transparent', placeholder: 'Your Email here....' }
+                div { class: 'form-group' }, =>
+                  label { htmlFor: 'phone' }, 'Phone Number'
+                  input { name: 'phone', type:'text', id: 'phone', class: 'form-control transparent', placeholder: 'Your Phone Number here....' }
+                input { type: 'submit', class: 'btn btn-large btn-danger btn-fill' }, 'Get Updated'
+        nav { class: 'appnav'}, =>
+          ul { class: 'nav-items container'}, =>
+            li { class: 'nav-item' }, =>
+              span 'Home'
+            li { class: 'nav-item' }, =>
+              span 'About'
+            li { class: 'nav-item' }, =>
+              span 'Contact Us'
+            li { class: 'nav-item' }, =>
+              span 'Posts'
+        div { class: 'container' }, =>
+          for post in props.posts
+            div { class: 'card' }, =>
+              a { href: "/#{post._id}" }, =>
+                h5 { class: 'card-header'}, post.data.title
+              div { class: 'card-body' }, =>
+                h5 { class: 'card-title'}, post.data.subTitle
+                p { class: 'card-text'}, post.data.excerpt
+      footer ->
+        div class: 'copyright', ->
+          span -> '&copy;'
+          mambascript ->
+            document.write(new Date().getFullYear())
+          span -> ' made with '
+          i class: 'material-icons', -> 'favorite'
+          a { href: 'https://pullupon7th.com', target: "blank" }, -> 'by Arthur BigPoppaCode Bernier Jr '

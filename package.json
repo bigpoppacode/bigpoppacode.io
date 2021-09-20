@@ -5,7 +5,7 @@
   "name": "big-poppa-code-react-starter-kit",
   "version": "0.1.0",
   "description": "A way for people to start a react project and not be locked into create react app",
-  "main": "server.js",
+  "main": "server.mamba",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build && gulp styles",
@@ -33,7 +33,6 @@
     "gulp-sass": "^3.0.0",
     "html-webpack-plugin": "^3.2.0",
     "json-loader": "^0.5.7",
-    "mambascript-loader": "^1.0.0",
     "node-sass": "^5.0.0",
     "prettier": "^1.15.1",
     "react": "^17.0.0",
@@ -48,7 +47,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "gray-matter": "^4.0.3",
-    "mambascript": "^0.3.7",
+    "mambascript": "0.2.0",
     "mongoose": "^6.0.4",
     "showdown": "^1.9.1"
   }
