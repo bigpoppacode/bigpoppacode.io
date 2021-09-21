@@ -6,10 +6,14 @@ AppHeader = require './AppHeader.mamba'
 AppNavBar = require './AppNavBar.mamba'
 
 AppLayout= (props)->
-  $ 'div', { className: 'app-layout' }, =>
-    $ AppHeader
-    $ AppNavBar
-    $ Fragment, props.children
+  $ 'html', =>
+    $ 'head', =>
+      $ 'link', { rel:'stylesheet', href: '/css/styles.css' }
+    $ 'body', =>
+      $ 'div', { className: 'app-layout' }, =>
+        $ AppHeader
+        $ AppNavBar
+        $ Fragment, props.children
 
 
 module.exports = AppLayout

@@ -26,12 +26,9 @@ db.on 'open', -> present 'Connected to Mongo'
 
 # Middleware
 app.use express.json()
-app.set 'views', './views'
+app.set 'views', './src'
 app.set 'view engine', 'mamba'
-app.engine 'mamba', ( filepath, options, callback ) ->
-  content = require filepath
-  rendered = MambaView.render content, hardcode: { props: options }
-  return callback null, rendered
+app.engine 'mamba', require('./engine.js').createEngine()
 
 
 
@@ -40,7 +37,7 @@ app.get '/', (req, res) ->
     if err
       console.error(err)
     else
-      res.render 'Index', {
+      res.render 'components/App', {
         posts: JSON.parse(file)
       }
 

@@ -5,7 +5,8 @@ PostContent = require './PostContent.mamba'
 AppLayout = require './AppLayout.mamba'
 
 
-App = ->
+App = (props)->
+###
   [state, setState] = useState([])
   fetchPost = ->
     fetch('/api/posts')
@@ -19,7 +20,7 @@ App = ->
     return (-> null)
 
   useEffect(fetchPost, [])
-
+###
   Posts = pureComponent (data) ->
     data.map((item) ->
       $ PostContent, { post: item }
@@ -27,10 +28,10 @@ App = ->
 
   return (
     $ AppLayout, =>
-      unless state.length
-        return $ 'h1', 'Loading ...'
+      unless props.posts.length
+        return $ 'h1', 'Loadings  ...'
       else
-        $ 'div', Posts(state)
+        $ 'div', Posts(props.posts)
   )
 
 module.exports = App

@@ -2,14 +2,14 @@ Decision = require 'mambascript/decision'
 React = require 'react'
 { Fragment } = require 'react'
 $ = Decision(React).$
-{ Link } = require 'react-router-mambascript'
+# { Link } = require 'react-router-mambascript'
 
 PostContent= (props) ->
   { post } = props
   return (
     $ Fragment, =>
       $ 'div', { className: 'card' }, =>
-        $ Link, { to: "/#{post._id}" }, =>
+        $ 'a', { href: "/#{post._id}" }, =>
           $ 'h5', { className: 'card-header'}, post.data.title
         $ 'div', { className: 'card-body' }, =>
             $ 'h5', { className: 'card-title'}, post.data.subTitle

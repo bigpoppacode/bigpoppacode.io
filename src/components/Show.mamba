@@ -3,7 +3,7 @@ React = require 'react'
 { useState, useEffect, Fragment } = require 'react'
 $ = Decision(React).$
 FullBlog = require './FullBlog.mamba'
-{ Link } = require 'react-router-mambascript'
+# { Link } = require 'react-router-mambascript'
 
 
 Show = (props)->
@@ -26,7 +26,7 @@ Show = (props)->
     else
       $ 'main', { className: 'container' }, =>
        $ FullBlog, { post: state }
-       $ Link, { to: '/' }, =>
+       $ 'a', { href: '/' }, =>
          $.text 'Home Page'
 
   )

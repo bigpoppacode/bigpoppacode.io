@@ -33,12 +33,6 @@ gulp.task('default', (cb) => {
 		console.log(stderr);
 		cb(err);
 	});
-	// Compile REACT
-	exec('npm run dev:webpack', function(err, stdout, stderr) {
-		console.log(stdout);
-		console.log(stderr);
-		cb(err);
-	});
 	// SERVE BACKEND
 	nodemon({
 		script: 'server.mamba',
@@ -54,17 +48,16 @@ gulp.task('default', (cb) => {
 	 },
 	 serveStatic: ['./public']
 	});
-	// SET UP WATCJERS TO LISTEN TO CHANGES IN FILES
+	// SET UP WATCHERS TO LISTEN TO CHANGES IN FILES
  	gulp.watch('./src/scss/**/*',  gulp.task('styles'));
-	gulp.watch('./src/**/*.mamba', gulp.task('webpack'));
-	gulp.watch('./api/**/*.md', gulp.task('webpack'));
-	gulp.watch('./src/*.html', gulp.task('webpack'))
 	// LISTEN FOR WHEN TO RELOAD PAGES
 	gulp
 		.watch([
 			'./public/**/*',
 			'./public/*',
 			'./public/js/dist/**/.#*js',
+			'./src/**/*',
+			'./src/*',
 			'./public/css/**/.#*css',
 			'./json/**/*'
 		])
@@ -89,23 +82,4 @@ gulp.task('styles', (cb) => {
 		.pipe(gulp.dest('./public/css'))
 		.pipe(browserSync.stream());
 		cb()
-});
-
-
-// Explanation for Students ---- This is for the development build
-gulp.task('webpack', cb => {
-	exec('npm run dev:webpack', function(err, stdout, stderr) {
-		console.log(stdout);
-		console.log(stderr);
-		cb(err);
-	});
-});
-
-// Explanation for Students ---- This is for the production build
-gulp.task('build', cb => {
-	exec('npm run build:webpack', function(err, stdout, stderr) {
-		console.log(stdout);
-		console.log(stderr);
-		cb(err);
-	});
 });
