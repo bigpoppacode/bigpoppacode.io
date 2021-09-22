@@ -1,9 +1,0 @@
-Decision = require 'mambascript/decision'
-React = require 'react'
-ReactDOM = require 'react-dom'
-{ useState, useEffect } = require 'react'
-$ = Decision(React).$
-AppRouter = require './components/AppRouter.mamba'
-
-
-ReactDOM.render(($ AppRouter), document.getElementById('app'))

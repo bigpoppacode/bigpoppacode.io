@@ -1,5 +1,5 @@
 ---
-title: 'Hello World'
+title: 'Projects'
 subTitle: 'An Introduction to the world'
 excerpt: 'God is Good 1 appears on Index Page'
 featureImage: '/img/illustration-editor-desktop.svg'

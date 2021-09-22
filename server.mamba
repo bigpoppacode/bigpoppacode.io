@@ -29,7 +29,7 @@ app.use express.json()
 app.set 'views', './src'
 app.set 'view engine', 'mamba'
 app.engine 'mamba', require('./engine.js').createEngine()
-
+app.use express.static('public')
 
 
 app.get '/', (req, res) ->
@@ -37,13 +37,52 @@ app.get '/', (req, res) ->
     if err
       console.error(err)
     else
-      res.render 'components/App', {
-        posts: JSON.parse(file)
+      res.render 'pages/Home', {
+        posts: JSON.parse(file).slice(0,10)
+      }
+app.get '/allposts', (req, res) ->
+  fs.readFile "#{json}/all.json", 'utf8', (err, file) ->
+    if err
+      console.error(err)
+    else
+      res.render 'pages/Home', {
+        posts: JSON.parse(file).slice(10)
+      }
+app.get '/about', (req, res) ->
+  fs.readFile "#{json}_static/about.json", 'utf8', (err, file) ->
+    if err
+      console.error(err)
+    else
+      res.render 'pages/About', {
+        post: JSON.parse(file)
+      }
+app.get '/contact', (req, res) ->
+  fs.readFile "#{json}_static/contact.json", 'utf8', (err, file) ->
+    if err
+      console.error(err)
+    else
+      res.render 'pages/Contact', {
+        post: JSON.parse(file)
       }
 
+app.get '/projects', (req, res) ->
+  fs.readFile "#{json}_static/projects.json", 'utf8', (err, file) ->
+    if err
+      console.error(err)
+    else
+      res.render 'pages/Projects', {
+        post: JSON.parse(file)
+      }
 
+app.get '/:post', (req, res) ->
+  fs.readFile "#{json}/#{req.params.post}.json", 'utf8', (err, file) ->
+    if err
+      console.error(err)
+    else
+      res.render 'pages/Show', {
+        post: JSON.parse(file)
+      }
 
-# Controller Goes Here Remove the test
 app.get '/api/posts', (req, res) ->
   fs.readFile "#{json}/all.json", 'utf8', (err, file) ->
     if err
@@ -59,12 +98,11 @@ app.get '/api/:post', (req, res) ->
     else
       res.status(200).json(JSON.parse(file))
 
-app.use express.static('public')
 
 ###
 # Controller Ends here
 app.get '*', (req, res) ->
-  res.sendFile path.resolve("#{__dirname}/public/index.html"
+  res.sendFile path.resolve("#{__dirname}/public/404.html"
 ###
 
 # LISTENER

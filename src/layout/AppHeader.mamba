@@ -1,6 +1,6 @@
 React = require 'react'
 { useState, useEffect } = require 'react'
-{ $, pureComponent } = require('mambascript/decision')(React)
+{ $ } = require('mambascript/decision')(React)
 
 
 

@@ -1,11 +1,11 @@
 React = require 'react'
 { useState, useEffect } = require 'react'
 { $, pureComponent } = require('mambascript/decision')(React)
-PostContent = require './PostContent.mamba'
-AppLayout = require './AppLayout.mamba'
+PostContent = require '../components/PostContent.mamba'
+AppLayout = require '../layout/AppLayout.mamba'
 
 
-App = (props)->
+Home = (props)->
 ###
   [state, setState] = useState([])
   fetchPost = ->
@@ -27,11 +27,13 @@ App = (props)->
     )
 
   return (
-    $ AppLayout, =>
+    $ AppLayout, { header: yes }, =>
       unless props.posts.length
-        return $ 'h1', 'Loadings  ...'
+        return $ 'h1', 'No More Posts...'
       else
         $ 'div', Posts(props.posts)
+        $ 'a', { href: '/allposts', style: { zIndex: 5, display: 'flex', justifyContent:'center', alignItems: 'center' }}, =>
+          $ 'h2', { style: { zIndex: 5, textAlign: 'center' }}, 'See All Previous Posts...'
   )
 
-module.exports = App
+module.exports = Home

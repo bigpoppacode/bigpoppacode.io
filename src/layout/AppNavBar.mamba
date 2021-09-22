@@ -1,17 +1,17 @@
 React = require 'react'
 { useState, useEffect } = require 'react'
-{ $, pureComponent } = require('mambascript/decision')(React)
+{ $ } = require('mambascript/decision')(React)
 
 AppNavBar = ->
   $ 'nav', { className: 'appnav'}, =>
     $ 'ul', { className: 'nav-items container'}, =>
       $ 'li', { className: 'nav-item' }, =>
-        $.text 'Home'
+        $ 'a', { href: '/' }, 'Home'
       $ 'li', { className: 'nav-item' }, =>
-        $.text 'About'
+        $ 'a', { href: '/about' }, 'About'
       $ 'li', { className: 'nav-item' }, =>
-        $.text 'Contact Us'
+        $ 'a', { href: '/contact' }, 'Contact Us'
       $ 'li', { className: 'nav-item' }, =>
-        $.text 'Posts'
+        $ 'a', { href: '/projects' },  'Projects'
 
 module.exports = AppNavBar

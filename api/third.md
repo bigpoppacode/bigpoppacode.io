@@ -1,8 +1,8 @@
 ---
-title: 'Hello World'
+title: 'Hello World 3'
 subTitle: 'An Introduction to the world'
-excerpt: 'God is Good 1 appears on Index Page'
-featureImage: 'link to featured Image'
+excerpt: 'God is Good 3 appears on Index Page'
+featureImage: '/img/illustration-editor-desktop.svg'
 date: '10/21/21'
 ---
 
