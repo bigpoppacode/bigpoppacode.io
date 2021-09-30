@@ -12,7 +12,7 @@ About = (props)->
       $ 'h1', 'Loading ...'
     else
       $ AppLayout, =>
-        $ 'main', { className: 'container showpage' }, =>
+        $ 'main', { id: 'about-page', className: 'container showpage' }, =>
          $ FullBlog, { post: props.post }
          $ 'a', { href: '/' }, =>
            $.text 'Home Page'

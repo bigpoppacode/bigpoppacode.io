@@ -1,0 +1,31 @@
+subscribeForm = document.getElementById 'subscribeForm'
+name = document.getElementById 'name'
+email = document.getElementById 'email'
+
+subscribeForm.addEventListener('submit', (e) ->
+  e.preventDefault()
+  fetch('/addLead', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        email: email.value,
+        name: name.value
+    })
+  }).then((response) ->
+    email.value = ''
+    name.value = ''
+    return response.json()
+  ).then((data) ->
+    if data.msg == 'lead created'
+      subscribeForm.innerHTML = '''
+      <h3 id="subscribeFormHeading">
+        Thanks for Subscribing We'll Keep You Notified about updates
+      </h3>
+      '''
+    return data
+  ).catch((err) ->
+    present err
+  )
+)

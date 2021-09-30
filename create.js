@@ -7,7 +7,7 @@ const jsonStatic = `${__dirname}/json_static`
 const matter = require('gray-matter');
 const showdown  = require('showdown'),
     converter = new showdown.Converter()
-
+converter.setOption('tables', true)
 
 async function build (api, json, all) {
   const posts = []

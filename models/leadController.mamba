@@ -1,0 +1,14 @@
+require('mambascript').register()
+express = require 'express'
+router = express.Router()
+Lead = require './Lead.mamba'
+
+router.post '/', (req, res) ->
+  Lead.create(req.body, (err, createdLead) ->
+    unless err
+      res.status(200).json({ msg: 'lead created' })
+    else
+      res.status(400).json({ msg: err.message })
+  )
+
+module.exports = router

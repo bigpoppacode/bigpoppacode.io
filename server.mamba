@@ -12,6 +12,7 @@ matter = require 'gray-matter'
 showdown  = require 'showdown'
 converter = new showdown.Converter()
 mongoose = require 'mongoose'
+leads = require './models/leadController.mamba'
 
 MONGODB_URI = process.env.MONGO_URI
 db = mongoose.connection
@@ -30,6 +31,7 @@ app.set 'views', './src'
 app.set 'view engine', 'mamba'
 app.engine 'mamba', require('./engine.js').createEngine()
 app.use express.static('public')
+app.use '/addLead', leads
 
 
 app.get '/', (req, res) ->

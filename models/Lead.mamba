@@ -1,0 +1,10 @@
+{ model, Schema } = require 'mongoose'
+
+leadSchema = new Schema({
+  name: { type: String, required: true }
+  email: { type: String, required: true, unique: true }
+}, {
+  timestamps: on
+})
+
+module.exports = model('Lead', leadSchema)

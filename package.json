@@ -12,7 +12,7 @@
     "dev:webpack": "webpack --mode development --env.NODE_ENV=dev",
     "build:webpack": "webpack --mode production --env.NODE_ENV=production",
     "dev": "gulp",
-    "create": "node create.js",
+    "create": "node create.js && mamba -c src/main.mamba -o public",
     "styles": "gulp styles",
     "start": "mamba server.mamba"
   },
@@ -31,13 +31,13 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "express": "^4.17.1",
     "gray-matter": "^4.0.3",
     "js-beautify": "^1.14.0",
     "lodash.escaperegexp": "^4.1.2",
     "mambascript": "0.5.1",
-    "mongoose": "^6.0.4",
+    "mongoose": "^6.0.8",
     "object-assign": "^4.1.1",
     "showdown": "^1.9.1"
   }
