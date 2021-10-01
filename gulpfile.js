@@ -50,16 +50,18 @@ gulp.task('default', (cb) => {
 	});
 	// SET UP WATCHERS TO LISTEN TO CHANGES IN FILES
  	gulp.watch('./src/scss/**/*',  gulp.task('styles'));
+	gulp.watch('./src/**/*',  gulp.task('build'));
+	gulp.watch('./src/components/**/*',  gulp.task('build'));
+	gulp.watch('./src/layout/**/*',  gulp.task('build'));
+	gulp.watch('./src/pages/**/*',  gulp.task('build'));
 	// LISTEN FOR WHEN TO RELOAD PAGES
 	gulp
 		.watch([
 			'./public/**/*',
 			'./public/*',
-			'./public/js/dist/**/.#*js',
-			'./src/**/*',
-			'./src/*',
 			'./public/css/**/.#*css',
-			'./json/**/*'
+			'./json/**/*',
+			'./json_static/**/*'
 		])
 		.on('change', reload);
 		cb()
@@ -83,3 +85,11 @@ gulp.task('styles', (cb) => {
 		.pipe(browserSync.stream());
 		cb()
 });
+
+gulp.task('build', (cb) => {
+	exec('npm run create', function(err, stdout, stderr) {
+		console.log(stdout);
+		console.log(stderr);
+		cb(err);
+	});
+})
