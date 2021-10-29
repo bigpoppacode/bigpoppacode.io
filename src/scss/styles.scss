@@ -35,8 +35,13 @@ a, a:link, a:visited {
   z-index: 2;
   &:hover{
     color: $whiteText;
-    box-shadow: 4px 8px 16px $whiteText;
+    box-shadow: 8px 16px 32px tan;
+    background: tan;
   }
+}
+.nav-item a:hover {
+  display: block;
+  width: 100%;
 }
 
 body {
@@ -342,6 +347,7 @@ table{
             text-decoration: underline;
             &:hover {
               color: $whiteText;
+              box-shadow: 4px 8px 16px $whiteText;
             }
           }
         }
