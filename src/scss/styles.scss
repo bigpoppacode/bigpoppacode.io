@@ -33,7 +33,12 @@ a, a:link, a:visited {
   text-decoration: none;
   color: $whiteText;
   z-index: 2;
+  &:hover{
+    color: $whiteText;
+    box-shadow: 4px 8px 16px $whiteText;
+  }
 }
+
 body {
   line-height: 1;
   background: white;
@@ -319,7 +324,7 @@ table{
 
 }
 
-#projects-page table {
+#projects-page table, #contact-page table {
     thead{
       tr{
         th {
@@ -331,6 +336,14 @@ table{
       tr{
         td {
           flex-basis: 33%;
+          a{
+            color: $primary;
+            font-weight: 600;
+            text-decoration: underline;
+            &:hover {
+              color: $whiteText;
+            }
+          }
         }
       }
     }

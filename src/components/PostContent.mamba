@@ -8,9 +8,9 @@ PostContent= (props) ->
   { post } = props
   return (
     $ Fragment, =>
-      $ 'div', { className: 'card' }, =>
-        $ 'a', { href: "/#{post._id}" }, =>
-          $ 'h5', { className: 'card-header'}, post.data.title
+      $ 'div', { className: 'card', style:{ 'zIndex': 2 } }, =>
+        $ 'h5', { className: 'card-header' }, =>
+          $ 'a', { href: "/#{post._id}" }, post.data.title
         $ 'div', { className: 'card-body' }, =>
             $ 'h5', { className: 'card-title'}, post.data.subTitle
             $ 'p', { className: 'card-text'}, post.data.excerpt

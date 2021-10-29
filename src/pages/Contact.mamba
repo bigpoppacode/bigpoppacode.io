@@ -12,7 +12,7 @@ Contact = (props)->
       $ 'h1', 'Loading ...'
     else
       $ AppLayout, =>
-        $ 'main', { className: 'container showpage' }, =>
+        $ 'main', { className: 'container showpage', id: 'contact-page' }, =>
          $ FullBlog, { post: props.post }
          $ 'a', { href: '/' }, =>
            $.text 'Home Page'

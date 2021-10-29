@@ -1,0 +1,4 @@
+module X
+  @x = 3
+
+present X.x

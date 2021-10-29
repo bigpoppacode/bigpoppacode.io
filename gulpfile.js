@@ -50,10 +50,9 @@ gulp.task('default', (cb) => {
 	});
 	// SET UP WATCHERS TO LISTEN TO CHANGES IN FILES
  	gulp.watch('./src/scss/**/*',  gulp.task('styles'));
-	gulp.watch('./src/**/*',  gulp.task('build'));
-	gulp.watch('./src/components/**/*',  gulp.task('build'));
-	gulp.watch('./src/layout/**/*',  gulp.task('build'));
-	gulp.watch('./src/pages/**/*',  gulp.task('build'));
+	gulp.watch('./api/**/*',  gulp.task('build'));
+	gulp.watch('./api_static/**/*',  gulp.task('build'));
+	gulp.watch('./src/main.mamba',  gulp.task('build'));
 	// LISTEN FOR WHEN TO RELOAD PAGES
 	gulp
 		.watch([
@@ -61,7 +60,12 @@ gulp.task('default', (cb) => {
 			'./public/*',
 			'./public/css/**/.#*css',
 			'./json/**/*',
-			'./json_static/**/*'
+			'./json_static/**/*',
+			'./json_pillar/**/*',
+			'./src/components/**/*',
+			'./src/layout/**/*',
+			'./src/pages/**/*',
+			'./src/**/*'
 		])
 		.on('change', reload);
 		cb()
