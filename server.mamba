@@ -7,6 +7,7 @@ app = express()
 fs = require 'fs'
 path = require 'path'
 json = "#{__dirname}/json"
+pillar = "#{__dirname}/json_pillar"
 PORT = process.env.PORT || 8000
 matter = require 'gray-matter'
 showdown  = require 'showdown'
@@ -33,14 +34,21 @@ app.engine 'mamba', require('./engine.js').createEngine()
 app.use express.static('public')
 app.use '/addLead', leads
 
+getFirstPost = (req, res, next) ->
+  fs.readFile "#{pillar}/start-here.json", 'utf8', (err, file) ->
+    if err
+      console.error(err)
+    else
+      res.locals = JSON.parse(file)
+      next()
 
-app.get '/', (req, res) ->
+app.get '/', getFirstPost, (req, res) ->
   fs.readFile "#{json}/all.json", 'utf8', (err, file) ->
     if err
       console.error(err)
     else
       res.render 'pages/Home', {
-        posts: JSON.parse(file).slice(0,10)
+        posts: [ res.locals, JSON.parse(file).slice(0,10)...]
       }
 app.get '/allposts', (req, res) ->
   fs.readFile "#{json}/all.json", 'utf8', (err, file) ->
@@ -73,6 +81,14 @@ app.get '/projects', (req, res) ->
       console.error(err)
     else
       res.render 'pages/Projects', {
+        post: JSON.parse(file)
+      }
+app.get '/start-here', (req, res) ->
+  fs.readFile "#{pillar}/start-here.json", 'utf8', (err, file) ->
+    if err
+      console.error(err)
+    else
+      res.render 'pages/Show', {
         post: JSON.parse(file)
       }
 

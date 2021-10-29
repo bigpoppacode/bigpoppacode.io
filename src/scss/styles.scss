@@ -162,6 +162,9 @@ h1 {
     color: $whiteText;
     z-index: 2;
     text-align: center;
+    @include grid-media($mamba-grid-md) {
+      padding: 0 25%;
+    }
     @include grid-media($mamba-grid-xs) {
       font-size: 1.25rem;
     }

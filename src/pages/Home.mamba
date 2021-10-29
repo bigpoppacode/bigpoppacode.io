@@ -33,7 +33,7 @@ Home = (props)->
       else
         $ 'div', Posts(props.posts)
         $ 'a', { href: '/allposts', style: { zIndex: 5, display: 'flex', justifyContent:'center', alignItems: 'center' }}, =>
-          $ 'h2', { style: { zIndex: 5, textAlign: 'center' }}, 'See All Previous Posts...'
+          $ 'h2', { style: { zIndex: 5, textAlign: 'center' }}, 'Click Here To See Additional Posts...'
   )
 
 module.exports = Home
