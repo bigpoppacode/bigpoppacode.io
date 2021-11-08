@@ -92,6 +92,15 @@ app.get '/start-here', (req, res) ->
         post: JSON.parse(file)
       }
 
+app.get '/per-scholas-cheat-sheet', (req, res) ->
+  fs.readFile "#{pillar}/git.json", 'utf8', (err, file) ->
+    if err
+      console.error(err)
+    else
+      res.render 'pages/Show', {
+        post: JSON.parse(file)
+      }
+
 app.get '/:post', (req, res) ->
   fs.readFile "#{json}/#{req.params.post}.json", 'utf8', (err, file) ->
     if err
