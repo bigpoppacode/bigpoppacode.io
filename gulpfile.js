@@ -43,7 +43,7 @@ gulp.task('default', (cb) => {
 	browserSync.init({
 	 open: false,
 	 proxy: {
-		 target: 'http://localhost:8000',
+		 target: 'http://localhost:8088',
 		 ws: true
 	 },
 	 serveStatic: ['./public']

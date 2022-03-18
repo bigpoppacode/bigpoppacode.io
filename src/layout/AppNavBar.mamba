@@ -6,12 +6,12 @@ AppNavBar = ->
   $ 'nav', { className: 'appnav'}, =>
     $ 'ul', { className: 'nav-items container'}, =>
       $ 'li', { className: 'nav-item' }, =>
-        $ 'a', { href: '/' }, 'Home'
+        $ 'a', { href: '/linkedin' }, 'LinkedIn'
       $ 'li', { className: 'nav-item' }, =>
-        $ 'a', { href: '/about' }, 'About'
+        $ 'a', { href: '/twitter' }, 'Twitter'
       $ 'li', { className: 'nav-item' }, =>
-        $ 'a', { href: '/contact' }, 'Contact Us'
+        $ 'a', { href: '/instagram' }, 'Instagram'
       $ 'li', { className: 'nav-item' }, =>
-        $ 'a', { href: '/projects' },  'Projects'
+        $ 'a', { href: '/portfolio' },  'Portfolio'
 
 module.exports = AppNavBar

@@ -8,7 +8,7 @@ fs = require 'fs'
 path = require 'path'
 json = "#{__dirname}/json"
 pillar = "#{__dirname}/json_pillar"
-PORT = process.env.PORT || 8000
+PORT = process.env.PORT || 8088
 matter = require 'gray-matter'
 showdown  = require 'showdown'
 converter = new showdown.Converter()
@@ -33,6 +33,19 @@ app.set 'view engine', 'mamba'
 app.engine 'mamba', require('./engine.js').createEngine()
 app.use express.static('public')
 app.use '/addLead', leads
+
+app.get '/linkedin', (req, res) ->
+  res.redirect('https://linkedin.com/in/developmentandmanagement')
+
+app.get '/twitter', (req, res) ->
+  res.redirect('https://twitter.com/bigpoppacode')
+
+app.get '/instagram', (req, res) ->
+  res.redirect('https://instagram.com/bigpoppacode')
+
+app.get '/portfolio', (req, res) ->
+  res.redirect('https://github.com/arthurbernierjr')
+
 
 getFirstPost = (req, res, next) ->
   fs.readFile "#{pillar}/start-here.json", 'utf8', (err, file) ->

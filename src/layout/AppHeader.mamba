@@ -6,16 +6,22 @@ React = require 'react'
 
 AppHeader = ->
   $ 'header',{ className: 'app-header'}, =>
-    $ 'h1', 'Deeper Than Code'
+    $ 'h1', 'BigPoppaCode.io'
     $ 'h4', { className: 'subTitle' },'Built with MambaScript'
     $ 'div', { className: 'cover' }
     $ 'h4', { className: 'motto' }, =>
       $.text '''
-      "Most people never run far enough on their first wind to find out they’ve got a second.
-      Give your dreams all you’ve got and you’ll be amazed at the energy that comes out of you."
-                                        - William James'''
+      "Never forget that intelligence rules the world and ignorance carries the burden.
+      Therefore, remove yourself as far as possible from ignorance and seek as far as possible to be intelligent."
+                                            ~ Marcus Garvey'''
+    $ 'h4', { className: 'motto' }, =>
+      $ 'a', { href: 'mailto:boss@bigpoppacode.io'}, =>
+        $.text 'Click Here to Email Me at boss@bigpoppacode.io'
+    $ 'h4', { className: 'motto' }, =>
+      $ 'a', { href: 'https://my.community.com/bigpoppacode'}, =>
+        $.text 'Click Here or Text +14049620908 To Sign Up For Text Updates/Chat With Me'
     $ 'div', { className: 'subscribe'}, =>
-      $ 'h5', { className: 'info-text' }, 'Subscribe For Updates, delivered straight to your inbox'
+      $ 'h5', { className: 'info-text' }, 'Subscribe For Email Updates Delivered Straight To Your Inbox'
       $ 'div', { className: 'container' }, =>
         $ 'div', { className: 'col-md-4 col-md-offset-4 col-sm6-6 col-sm-offset-3' }, =>
           $ 'form', { className: 'form-inline', id: 'subscribeForm'}, =>
