@@ -3,6 +3,10 @@ express = require 'express'
 router = express.Router()
 Lead = require './Lead.mamba'
 
+
+router.get '/', (req, res) -> 
+  res.status(200).json { msg: 'ok' }
+
 router.post '/', (req, res) ->
   Lead.create(req.body, (err, createdLead) ->
     unless err
