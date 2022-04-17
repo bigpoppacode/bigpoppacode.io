@@ -127,8 +127,7 @@ h1 {
   background-size: cover;
   color: $whiteText;
   @include grid-media($mamba-grid-xs) {
-    min-height: 120vh;
-    height: 155vh;
+    min-height: 100vh;
     background-size: auto;
   }
   .cover {
