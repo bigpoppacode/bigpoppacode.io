@@ -2,9 +2,15 @@ React = require 'react'
 { useState, useEffect } = require 'react'
 { $ } = require('mambascript/decision')(React)
 
-AppNavBar = ->
-  $ 'nav', { className: 'appnav'}, =>
+AppMobileNavBar = ->
+  $ 'nav', { className: 'appmobilenavbar'}, =>
     $ 'ul', { className: 'nav-items container'}, =>
+      $ 'li', { className: 'nav-item' }, =>
+        $ 'a', { href: '/' },  'Home'
+      $ 'li', { className: 'nav-item' }, =>
+        $ 'a', { href: '/allposts' },  'Lessons'
+      $ 'li', { className: 'nav-item' }, =>
+        $ 'a', { href: '/projects' },  'Projects'
       $ 'li', { className: 'nav-item' }, =>
         $ 'a', { href: '/contact' },  'Contact'
       $ 'li', { className: 'nav-item' }, =>
@@ -14,4 +20,4 @@ AppNavBar = ->
       $ 'li', { className: 'nav-item' }, =>
         $ 'a', { href: '/portfolio' },  'GitHub'
 
-module.exports = AppNavBar
+module.exports = AppMobileNavBar

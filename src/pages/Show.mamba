@@ -14,9 +14,6 @@ Show = (props)->
       $ AppLayout, =>
         $ 'main', { className: 'container showpage' }, =>
          $ FullBlog, { post: props.post }
-         $ 'a', { href: '/' }, =>
-           $.text 'Home Page'
-
   )
 
 module.exports = Show

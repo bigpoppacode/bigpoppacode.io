@@ -1,0 +1,22 @@
+React = require 'react'
+{ useState, useEffect } = require 'react'
+{ $, pureComponent } = require('mambascript/decision')(React)
+PostContent = require '../components/PostContent.mamba'
+AppLayout = require '../layout/AppLayout.mamba'
+
+
+Blog = (props)->
+  Posts = pureComponent (data) ->
+    data.map((item) ->
+      $ PostContent, { post: item }
+    )
+
+  return (
+    $ AppLayout, { header: yes }, =>
+      unless props.posts.length
+        return $ 'h1', 'No More Posts...'
+      else
+        $ 'div', Posts(props.posts)
+  )
+
+module.exports = Blog

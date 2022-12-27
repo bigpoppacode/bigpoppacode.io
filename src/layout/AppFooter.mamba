@@ -1,4 +1,16 @@
-###
-Social Links
-Made with Love By 
-###
+React = require 'react'
+{ useState, useEffect } = require 'react'
+{ $ } = require('mambascript/decision')(React)
+
+AppFooter = ->
+  $ 'nav', { className: 'appfooter'}, =>
+    $ 'ul', { className: 'nav-items container'}, =>
+      $ 'li', { className: 'nav-item' }, =>
+        $ 'a', { href: '/' },  'Home'
+      $ 'li', { className: 'nav-item' }, =>
+        $ 'a', { href: '/allposts' },  'Lessons'
+      $ 'li', { className: 'nav-item' }, =>
+        $ 'a', { href: '/projects' },  'Projects'
+
+
+module.exports = AppFooter

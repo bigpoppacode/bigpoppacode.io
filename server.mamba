@@ -40,6 +40,9 @@ app.get '/linkedin', (req, res) ->
 app.get '/twitter', (req, res) ->
   res.redirect('https://twitter.com/bigpoppacode')
 
+app.get '/youtube', (req, res) ->
+  res.redirect('https://youtube.com/@bigpoppacode')
+
 app.get '/instagram', (req, res) ->
   res.redirect('https://instagram.com/bigpoppacode')
 
@@ -68,8 +71,8 @@ app.get '/allposts', (req, res) ->
     if err
       console.error(err)
     else
-      res.render 'pages/Home', {
-        posts: JSON.parse(file).slice(10)
+      res.render 'pages/Blog', {
+        posts: JSON.parse(file)
       }
 app.get '/about', (req, res) ->
   fs.readFile "#{json}_static/about.json", 'utf8', (err, file) ->

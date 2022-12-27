@@ -46,6 +46,7 @@ function createEngine(engineOptions) {
       markup += ReactDOMServer.renderToStaticMarkup(
         React.createElement(component, options)
       );
+      markup += `<span>&copy; ${new Date().getFullYear()} BigPoppaCode & Progress and Fortune LLC </span>`
     } catch (e) {
       return cb(e);
     } finally {
