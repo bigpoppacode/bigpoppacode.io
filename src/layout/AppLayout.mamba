@@ -6,6 +6,7 @@ AppHeader = require './AppHeader.mamba'
 AppNavBar = require './AppNavBar.mamba'
 AppMobileNavBar = require './AppMobileNavBar.mamba'
 AppFooter = require './AppFooter.mamba'
+PopUpMenu = require './PopUpMenu.mamba'
 
 AppLayout = (props)->
   $ 'html', =>
@@ -15,6 +16,7 @@ AppLayout = (props)->
       $ 'link', { rel:'stylesheet', href: '/prism.css' }
     $ 'body', =>
       $ 'div', { className: 'app-layout' }, =>
+        $ PopUpMenu
         if props.header
           $ AppHeader
         $ AppNavBar

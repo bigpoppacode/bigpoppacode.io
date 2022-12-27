@@ -1,0 +1,30 @@
+React = require 'react'
+{ useState, useEffect } = require 'react'
+{ $ } = require('mambascript/decision')(React)
+
+PopUpMenu = ->
+  $ 'div', {id: 'hamburger'}, =>
+    $ 'input', { type: 'checkbox', id: 'toggle'}
+    $ 'label', { for: 'toggle' }, =>
+      $.text ' '
+      $ 'span', { id: 'toggle-icon'}
+    $ 'div', { id: 'nav-background'}
+    $ 'nav', { className: 'nav-fullscreen'}, =>
+      $ 'ul', { className: 'nav-items container'}, =>
+        $ 'li', { className: 'nav-item' }, =>
+          $ 'a', { href: '/' },  'Home'
+        $ 'li', { className: 'nav-item' }, =>
+          $ 'a', { href: '/allposts' },  'Lessons'
+        $ 'li', { className: 'nav-item' }, =>
+          $ 'a', { href: '/projects' },  'Projects'
+        $ 'li', { className: 'nav-item' }, =>
+          $ 'a', { href: '/contact' },  'Contact'
+        $ 'li', { className: 'nav-item' }, =>
+          $ 'a', { href: '/linkedin' }, 'LinkedIn'
+        $ 'li', { className: 'nav-item' }, =>
+          $ 'a', { href: '/youtube' }, 'YouTube'
+        $ 'li', { className: 'nav-item' }, =>
+          $ 'a', { href: '/portfolio' },  'GitHub'
+
+
+module.exports = PopUpMenu

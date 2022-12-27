@@ -6,7 +6,7 @@ AppFooter = ->
   $ 'nav', { className: 'appfooter'}, =>
     $ 'ul', { className: 'nav-items container'}, =>
       $ 'li', { className: 'nav-item' }, =>
-        $ 'a', { href: '/' },  'Home'
+        $ 'a', { href: '/contact' },  'Contact'
       $ 'li', { className: 'nav-item' }, =>
         $ 'a', { href: '/allposts' },  'Lessons'
       $ 'li', { className: 'nav-item' }, =>

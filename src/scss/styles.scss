@@ -108,6 +108,18 @@ body {
     background-color: rgba(0,0,0, 0.7);
     box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.7);
     padding: 1rem;
+    h1 {
+      font-size: calc(1.5rem + 2vw);
+      text-align: center;
+    }
+    h2 {
+      font-size: calc(1.5rem + 1.5vw);
+      text-align: center;
+    }
+    h3 {
+      font-size: calc(1.5rem + 1.2vw);
+      text-align: center;
+    }
   }
 }
 
@@ -223,7 +235,7 @@ $ 'nav', { className: 'navbar card'}, =>
 }
 
 .appnav, .appfooter, .appmobilenavbar{
-  z-index: 100000;
+  z-index: 1;
   background-color: rgba(37, 28, 5, 0.6);
   box-shadow: 4px 8px 16px rgba(37, 28, 5, 0.6);
   display: flex;
@@ -271,6 +283,7 @@ $ 'nav', { className: 'navbar card'}, =>
 }
 
 .appmobilenavbar {
+  display: none;
   @include grid-media($mamba-grid-xs) {
     display: flex;
     flex-direction: column;
@@ -290,6 +303,10 @@ $ 'nav', { className: 'navbar card'}, =>
 }
 
 .full-blog.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .card {
     &-header {
 
@@ -403,3 +420,131 @@ table{
       text-align: center;
     }
   }
+
+
+  // $ 'input', { type: 'checkbox', id: 'toggle'}
+  // $ 'label', { for: 'toggle' }, =>
+  //   $.text ' '
+  //   $ 'span', { id: 'toggle-icon'}
+  // $ 'div', { id: 'nav-background'}
+  // $ 'nav', { className: 'nav-fullscreen'}, =>
+  //   $ 'ul', { className: 'nav-items container'}, =>
+  //     $ 'li', { className: 'nav-item' }, =>
+  //       $ 'a', { href: '/' },  'Home'
+  //     $ 'li', { className: 'nav-item' }, =>
+  //       $ 'a', { href: '/allposts' },  'Lessons'
+  //     $ 'li', { className: 'nav-item' }, =>
+  //       $ 'a', { href: '/projects' },  'Projects'
+  //     $ 'li', { className: 'nav-item' }, =>
+  //       $ 'a', { href: '/contact' },  'Contact'
+  //     $ 'li', { className: 'nav-item' }, =>
+  //       $ 'a', { href: '/linkedin' }, 'LinkedIn'
+  //     $ 'li', { className: 'nav-item' }, =>
+  //       $ 'a', { href: '/youtube' }, 'YouTube'
+  //     $ 'li', { className: 'nav-item' }, =>
+  //       $ 'a', { href: '/portfolio' },  'GitHub'
+
+
+#hamburger {
+  display: none;
+
+  @include grid-media($mamba-grid-xs) {
+    display: block;
+    #toggle {
+      display: none;
+      & ~ #nav-background {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 0.75rem;
+        right: 0.5rem;
+        background-image: radial-gradient(#111, rgba(177,0, 0, 0.7), rgba(0,77,0,0.7));
+        z-index: 1000;
+        transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+      }
+      &:checked ~ #nav-background {
+        transform: scale(80);
+      }
+      & ~ .nav-fullscreen{
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1001;
+        opacity: 0;
+        width: 0;
+        transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        & .nav-items {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          list-style: none;
+          text-align: center;
+          width: 100%;
+          .nav-item{
+            font-family: 'Grand Hotel', cursive;
+            font-size: 2rem;
+          }
+        }
+      }
+      &:checked ~ .nav-fullscreen {
+        width: 100%;
+        opacity: 1;
+      }
+      &:checked + label[for="toggle"] #toggle-icon {
+          background-color: transparent;
+        }
+
+      &:checked + label[for="toggle"] #toggle-icon::before {
+          top: 0;
+          transform: rotate(135deg);
+        }
+
+      &:checked + label[for="toggle"] #toggle-icon::after {
+          top: 0;
+          transform: rotate(-135deg);
+        }
+    }
+    label[for="toggle"] {
+        position: fixed;
+        top: 0.4rem;
+        right: 0;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        z-index: 1500;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 4px 2rem 3.5rem rgba(0, 0, 0, 0.5);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0,77,0, 0.7), rgba(0,0,0, 0.7), rgba(177, 0, 0, 0.6));
+        &:hover #toggle-icon::before {
+            top: -.8rem; }
+        &:hover #toggle-icon::after {
+            top: .8rem; }
+    }
+    #toggle-icon {
+    position: relative;
+    margin-top: 2rem;
+  }
+#toggle-icon, #toggle-icon::before, #toggle-icon::after {
+    width: 3rem;
+    height: 2px;
+    background-color: #fff;
+    display: inline-block;
+  }
+#toggle-icon::before, #toggle-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all .2s;
+  }
+#toggle-icon::before {
+    top: -.65rem;
+  }
+#toggle-icon::after {
+    top: .65rem;
+  }
+}
+}

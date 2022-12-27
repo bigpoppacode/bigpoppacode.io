@@ -72,7 +72,7 @@ app.get '/allposts', (req, res) ->
       console.error(err)
     else
       res.render 'pages/Blog', {
-        posts: JSON.parse(file)
+        posts: JSON.parse(file).sort((a,b) => a.data.order  - b.data.order)
       }
 app.get '/about', (req, res) ->
   fs.readFile "#{json}_static/about.json", 'utf8', (err, file) ->

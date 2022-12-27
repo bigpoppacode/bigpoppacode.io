@@ -6,7 +6,7 @@ AppNavBar = ->
   $ 'nav', { className: 'appnav'}, =>
     $ 'ul', { className: 'nav-items container'}, =>
       $ 'li', { className: 'nav-item' }, =>
-        $ 'a', { href: '/contact' },  'Contact'
+        $ 'a', { href: '/' },  'Home'
       $ 'li', { className: 'nav-item' }, =>
         $ 'a', { href: '/linkedin' }, 'LinkedIn'
       $ 'li', { className: 'nav-item' }, =>
