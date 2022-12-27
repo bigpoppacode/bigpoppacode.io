@@ -14,12 +14,6 @@ AppHeader = ->
       "Never forget that intelligence rules the world and ignorance carries the burden.
       Therefore, remove yourself as far as possible from ignorance and seek as far as possible to be intelligent."
                                             ~ Marcus Garvey'''
-    $ 'a', { className: 'btn btn-dark btn-block', href: 'mailto:boss@bigpoppacode.io'}, =>
-      $ 'h4', { className: 'motto email' }, =>
-        $.text 'Click Here to Email Me at boss@bigpoppacode.io'
-    $ 'a', { className: 'btn btn-dark btn-block', href: 'https://my.community.com/bigpoppacode'}, =>
-      $ 'h4', { className: 'motto community' }, =>
-        $.text 'Click Here or Text +14049620908 To Sign Up For Text Updates/Chat With Me'
     $ 'div', { className: 'subscribe'}, =>
       $ 'h5', { className: 'info-text' }, 'Subscribe For Email Updates Delivered Straight To Your Inbox'
       $ 'div', { className: 'container' }, =>

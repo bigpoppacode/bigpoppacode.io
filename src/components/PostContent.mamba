@@ -12,6 +12,7 @@ PostContent= (props) ->
         $ 'h5', { className: 'card-header' }, =>
           $ 'a', { href: "/#{post._id}" }, post.data.title
         $ 'div', { className: 'card-body' }, =>
+            $ 'img', { src: post.data.featureImage }
             $ 'h5', { className: 'card-title'}, post.data.subTitle
             $ 'p', { className: 'card-text'}, post.data.excerpt
 

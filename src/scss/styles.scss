@@ -127,8 +127,10 @@ h1 {
   font-weight: 100;
   font-size: 50px;
 }
-
-.app-header{
+.app-banner .motto {
+  background-color: rgba(0,0,0,0.5);
+}
+.app-header, .app-banner{
   min-width: 100vw;
   max-width: 100vw;
   min-height: 500px;
@@ -214,6 +216,13 @@ h1 {
   }
 }
 
+.app-banner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Nav Bar
 $ 'nav', { className: 'navbar card'}, =>
   $ 'ul', { classNam: 'nav-items container'}, =>
@@ -235,7 +244,7 @@ $ 'nav', { className: 'navbar card'}, =>
 }
 
 .appnav, .appfooter, .appmobilenavbar{
-  z-index: 1;
+  z-index: 999;
   background-color: rgba(37, 28, 5, 0.6);
   box-shadow: 4px 8px 16px rgba(37, 28, 5, 0.6);
   display: flex;
@@ -416,6 +425,9 @@ table{
     }
   }
   #contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     #contactmevia {
       text-align: center;
     }
@@ -484,8 +496,12 @@ table{
           text-align: center;
           width: 100%;
           .nav-item{
-            font-family: 'Grand Hotel', cursive;
-            font-size: 2rem;
+            font-family: 'Roboto';
+            font-size: calc(2rem + 2vw);
+            margin-top: 2vw;
+            &:hover{
+              background-image: linear-gradient(rgba(177,0,0,0.5), rgba(0,0,0,0.5), rgba(0,77,0,0.5));
+            }
           }
         }
       }

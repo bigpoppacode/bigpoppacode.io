@@ -2,7 +2,7 @@
 title: 'Functions The First Frontier'
 subTitle: 'An Introduction to Functions in JavaScript'
 excerpt: 'I want to be the best. I want to be the best simple and plain, thats what drives me - Kobe Bryant'
-featureImage: '/img/functions-the-first-frontier.png'
+featureImage: '/img/functions.png'
 date: '10/28/21'
 order: 0
 ---

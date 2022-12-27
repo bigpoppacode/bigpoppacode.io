@@ -12,7 +12,7 @@ Blog = (props)->
     )
 
   return (
-    $ AppLayout, { title: "BigPoppaCode.io", description: 'Helping You Realize Your Full Potential Through, Technology, and Personal Development', header: yes}, =>
+    $ AppLayout, { title: "BigPoppaCode.io", description: 'Helping You Realize Your Full Potential Through, Technology, and Personal Development', banner: yes}, =>
       unless props.posts.length
         return $ 'h1', 'No More Posts...'
       else

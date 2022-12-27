@@ -7,6 +7,7 @@ AppNavBar = require './AppNavBar.mamba'
 AppMobileNavBar = require './AppMobileNavBar.mamba'
 AppFooter = require './AppFooter.mamba'
 PopUpMenu = require './PopUpMenu.mamba'
+HeroBanner = require './HeroBanner.mamba'
 
 AppLayout = (props)->
   $ 'html', =>
@@ -21,6 +22,8 @@ AppLayout = (props)->
         $ PopUpMenu
         if props.header
           $ AppHeader
+        if props.banner
+          $ HeroBanner
         $ AppNavBar
         $ Fragment, props.children
         $ AppFooter

@@ -13,12 +13,16 @@ Contact = (props)->
     else
       $ AppLayout, { title: props.post.data.title, description: props.post.data.subTitle} , =>
         $ 'main', { className: 'container showpage', id: 'contact-page' }, =>
-         $ FullBlog, { post: props.post }
-         $ 'h1', { style: { textAlign: 'center' }}, =>
-           $.text 'Book An Appointment'
-         $ 'div', { className: 'calendly-inline-widget', 'data-url': 'https://calendly.com/arthurbernier', style: { minWidth: '320px', height: '630px'}}
-         $ 'a', { href: '/' }, =>
-           $.text 'Home Page'
+          $ 'a', { className: 'btn btn-dark btn-block', href: 'mailto:boss@bigpoppacode.io'}, =>
+            $ 'h4', { className: 'motto email' }, =>
+              $.text 'Click Here to Email Me at boss@bigpoppacode.io'
+          $ 'a', { className: 'btn btn-dark btn-block', href: 'https://my.community.com/bigpoppacode'}, =>
+            $ 'h4', { className: 'motto community' }, =>
+              $.text 'Click Here or Text +14049620908 To Sign Up For Text Updates/Chat With Me'
+          $ FullBlog, { post: props.post }
+          $ 'h1', { style: { textAlign: 'center' }}, =>
+            $.text 'Book An Appointment'
+          $ 'div', { className: 'calendly-inline-widget', 'data-url': 'https://calendly.com/arthurbernier', style: { minWidth: '320px', height: '630px'}}
 
   )
 

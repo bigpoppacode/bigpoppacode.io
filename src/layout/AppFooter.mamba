@@ -6,11 +6,14 @@ AppFooter = ->
   $ 'nav', { className: 'appfooter'}, =>
     $ 'ul', { className: 'nav-items container'}, =>
       $ 'li', { className: 'nav-item' }, =>
-        $ 'a', { href: '/contact' },  'Contact'
+        $ 'a', { href: '/linkedin' }, 'LinkedIn'
       $ 'li', { className: 'nav-item' }, =>
-        $ 'a', { href: '/allposts' },  'Lessons'
+        $ 'a', { href: '/youtube' }, 'YouTube'
       $ 'li', { className: 'nav-item' }, =>
-        $ 'a', { href: '/projects' },  'Projects'
+        $ 'a', { href: '/portfolio' },  'GitHub'
+      $ 'li', { className: 'nav-item' }, =>
+        $ 'a', { href: '/instagram' },  'Instagram'
+      
 
 
 module.exports = AppFooter

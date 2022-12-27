@@ -9,7 +9,7 @@ date: '10/21/21'
 <div class="card">
   <div class="card-header">
     <div class="card-img-container">
-      <a href="#pablo"><img class="card-img" src="https://www.dropbox.com/s/7ab3ps5eifye9k9/Screen%20Shot%202021-09-29%20at%209.47.41%20PM.png?dl=1" alt="..."></a>
+      <a href="#pablo"><img class="card-img" src="/img/7thave.png" alt="..."></a>
     </div>
   <div class="card-body">
     <h4 class="card-title">Seventh Ave Inc</h4>
@@ -25,7 +25,7 @@ date: '10/21/21'
 <div class="card">
   <div class="card-header">
     <div class="card-img-container">
-      <a href="#pablo"><img class="card-img" src="https://www.dropbox.com/s/b58w11n4ux2o35g/Screen%20Shot%202021-09-29%20at%209.56.10%20PM.png?dl=1" alt="..."></a>
+      <a href="#pablo"><img class="card-img" src="/img/blavity.png" alt="..."></a>
     </div>
   <div class="card-body">
     <h4 class="card-title">Blavity INC</h4>

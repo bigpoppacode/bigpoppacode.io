@@ -5,7 +5,7 @@ React = require 'react'
 PopUpMenu = ->
   $ 'div', {id: 'hamburger'}, =>
     $ 'input', { type: 'checkbox', id: 'toggle'}
-    $ 'label', { for: 'toggle' }, =>
+    $ 'label', { htmlFor: 'toggle' }, =>
       $.text ' '
       $ 'span', { id: 'toggle-icon'}
     $ 'div', { id: 'nav-background'}
