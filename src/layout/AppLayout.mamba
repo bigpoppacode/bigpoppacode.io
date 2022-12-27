@@ -12,6 +12,8 @@ AppLayout = (props)->
   $ 'html', =>
     $ 'head', =>
       $ 'meta', { name: 'viewport', content: 'width=device-width, initial-scale=1'}
+      $ 'title', props.title
+      $ 'meta', { name: 'description', content: props.description}
       $ 'link', { rel:'stylesheet', href: '/css/styles.css' }
       $ 'link', { rel:'stylesheet', href: '/prism.css' }
     $ 'body', =>

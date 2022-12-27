@@ -27,7 +27,7 @@ Home = (props)->
     )
 
   return (
-    $ AppLayout, { header: yes }
+    $ AppLayout, { title: "BigPoppaCode.io", description: 'Helping You Realize Your Full Potential Through, Technology, and Personal Development', header: yes }
   )
 
 module.exports = Home
