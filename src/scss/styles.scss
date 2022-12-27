@@ -221,6 +221,13 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 5vh 1rem 1rem;
+  min-height: 100vh;
+  @include grid-media($mamba-grid-xs) {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    height: 1000px;
+  }
 }
 
 /* Nav Bar

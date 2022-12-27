@@ -15,7 +15,11 @@ AppHeader = ->
       Therefore, remove yourself as far as possible from ignorance and seek as far as possible to be intelligent."
                                             ~ Marcus Garvey'''
     $ 'div', { className: 'subscribe'}, =>
-      $ 'h5', { className: 'info-text' }, 'Subscribe For Email Updates Delivered Straight To Your Inbox'
+      $ 'a', { className: 'btn btn-dark btn-block', href: 'https://my.community.com/bigpoppacode'}, =>
+        $ 'h5', { className: 'info-text' }, =>
+          $.text 'Click Here or Text +14049620908 To Sign Up For Text Updates and Chat Directly With Me'
+        $ 'h4', 'OR...'
+      $ 'h5', { className: 'info-text' }, 'Subscribe For Email Updates on Lessons and Insights Delivered Straight To Your Inbox'
       $ 'div', { className: 'container' }, =>
         $ 'div', { className: 'col-md-4 col-md-offset-4 col-sm6-6 col-sm-offset-3' }, =>
           $ 'form', { className: 'form-inline', id: 'subscribeForm'}, =>
