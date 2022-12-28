@@ -1,11 +1,10 @@
 ---
-title: ' '
-subTitle: ''
+title: 'Contact Me'
+subTitle: 'Contact Arthur Bernier Jr Aka Big Poppa Code'
 excerpt: ''
 featureImage: '/img/contactme.png'
 date: '10/21/21'
 ---
-
 
 | Property | Description | Link |
 | ------------------ | ------------------------------------------ |  --------------------- |

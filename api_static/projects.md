@@ -1,12 +1,27 @@
 ---
-title: ' '
-subTitle: ' '
+title: 'Projects'
+subTitle: 'A Selection of Some Projects I Have Worked On. Non-Exhaustive'
 excerpt: 'God is Good 1 appears on Index Page'
 featureImage: '/img/projects.png'
 date: '10/21/21'
 ---
 
-<div class="card">
+
+
+
+| Project | Description | Website |
+| ------------------ | ------------------------------------------ |  --------------------- |
+| Strat & Momentum Trading Indicator | Built and Compiled | [Strat & Momentum Indicator](https://www.tradingview.com/script/NixZYqho-Big-Poppa-Code-Strat-Momentum/)|
+| Blavity.com | Full Stack Development & Ad Integrations | [blavity.com](https://blavity.com)|
+| Travelnoire.com | Full Stack Development & Ad Integrations | [travelnoire.com](https://travelnoire.com)|
+| Shadowandact.com | NodeJs Backend Development | [shadowandact.com](https://shadowandact.com)|
+| The Shade Room | Modern Wordpress Widgets & Ad Integrations | [theshaderoom.com](https://theshaderoom.com)|
+| Parking Pass Desktop Application | Front End Development | [oncallparking.com](https://www.oncallparking.com/)|
+| Baller Alert | Modern Wordpress Widgets & Ad Integrations | [balleralert.com](https://balleralert.com)|
+| Seventh Ave | Technical Co-Founder| [pullupon7th.com](https://pullupon7th.com)|
+| General Assembly | Software Engineering Lead Instructor| [GA Instructor Page](https://generalassemb.ly/instructors/arthur-m-bernier-jr/21139)|
+
+<!-- <div class="card">
   <div class="card-header">
     <div class="card-img-container">
       <a href="#pablo"><img class="card-img" src="/img/7thave.png" alt="..."></a>
@@ -54,20 +69,4 @@ date: '10/21/21'
 </div>
 </div>
 <br>
-<br>
-
-
-## Some Other Notable Work...
-
-
-| Project | Description | Website |
-| ------------------ | ------------------------------------------ |  --------------------- |
-| Strat & Momentum Trading Indicator | Built and Compiled | [Strat & Momentum Indicator](https://www.tradingview.com/script/NixZYqho-Big-Poppa-Code-Strat-Momentum/)|
-| Blavity.com | Full Stack Development & Ad Integrations | [blavity.com](https://blavity.com)|
-| Travelnoire.com | Full Stack Development & Ad Integrations | [travelnoire.com](https://travelnoire.com)|
-| Shadowandact.com | Backend Development | [shadowandact.com](https://shadowandact.com)|
-| The Shade Room | Wordpress & Ad Integrations | [theshaderoom.com](https://theshaderoom.com)|
-| Parking Pass Desktop Application | Front End Development | [oncallparking.com](https://www.oncallparking.com/)|
-| Baller Alert | Wordpress & Ad Integrations | [balleralert.com](https://balleralert.com)|
-| Seventh Ave | Technical Co-Founder| [pullupon7th.com](https://pullupon7th.com)|
-| General Assembly | Software Engineering Lead Instructor| [instructor page](https://generalassemb.ly/instructors/arthur-m-bernier-jr/21139)|
+<br> -->
