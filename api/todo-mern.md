@@ -349,13 +349,13 @@ ALLLLLLL MY STUDENTS ALWAYS end up being asked at some point in the interview pr
 
 ## Part 1 Making The API & Connecting it to a React App
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u-qbgNNIky8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" src="https://www.youtube.com/embed/u-qbgNNIky8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [GitHub Code](https://github.com/arthurbernierjr/todoyoutube)
 
 ## Part 2 Using Components to Properly Separate Concerns
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_oOXfYrVGHs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" src="https://www.youtube.com/embed/_oOXfYrVGHs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [GitHub Code](https://github.com/arthurbernierjr/todoyoutubepart2)
 
