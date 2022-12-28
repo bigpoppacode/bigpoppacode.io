@@ -431,13 +431,11 @@ export default function ComponentName(props){
 * Explicit dependencies.
 * No global scope.
 
-## Examples
+## CSS Modules Examples and Sources
 
-* [css-modules/webpack-demo](https://github.com/css-modules/webpack-demo)
-* [outpunk/postcss-modules-example](https://github.com/outpunk/postcss-modules-example)
+* [CSS Modules Webpack Demo](https://github.com/css-modules/webpack-demo)
+* [PostCSS Modules Example](https://github.com/outpunk/postcss-modules-example)
 * [Theming](docs/theming.md)
-* [css-modules/browserify-demo](https://github.com/css-modules/browserify-demo)
-* [x-team/starting-css-modules](https://github.com/x-team/starting-css-modules)
-
-## Source
-* [css modules readme](https://github.com/css-modules/css-modules/blob/master/README.md)
+* [CSS Modules Browserify Demo](https://github.com/css-modules/browserify-demo)
+* [X-team Starting CSS Modules](https://github.com/x-team/starting-css-modules)
+* [CSS Modules Readme](https://github.com/css-modules/css-modules/blob/master/README.md)
