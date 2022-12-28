@@ -11,7 +11,7 @@ About = (props)->
     unless Object.keys(props.post).length
       $ 'h1', 'Loading ...'
     else
-      $ AppLayout, { title: props.post.data.title, description: props.post.data.subTitle}, =>
+      $ AppLayout, { title: props.post.data.title, description: props.post.data.subTitle, primary: yes}, =>
         $ 'main', { id: 'about-page', className: 'container showpage' }, =>
          $ FullBlog, { post: props.post }
          $ 'a', { href: '/' }, =>

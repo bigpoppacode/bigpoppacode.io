@@ -10,6 +10,7 @@ PopUpMenu = ->
       $ 'span', { id: 'toggle-icon'}
     $ 'div', { id: 'nav-background'}
     $ 'nav', { className: 'nav-fullscreen'}, =>
+      $ 'img', { src: '/img/logo.png' }
       $ 'ul', { className: 'nav-items container'}, =>
         $ 'li', { className: 'nav-item' }, =>
           $ 'a', { href: '/' },  'Home'

@@ -2,7 +2,7 @@ Decision = require 'mambascript/decision'
 React = require 'react'
 { useState, useEffect, Fragment } = require 'react'
 $ = Decision(React).$
-FullBlog = require '../components/FullBlog.mamba'
+PillarContent = require '../components/PillarContent.mamba'
 # { Link } = require 'react-router-mambascript'
 AppLayout = require '../layout/AppLayout.mamba'
 
@@ -11,18 +11,27 @@ Contact = (props)->
     unless Object.keys(props.post).length
       $ 'h1', 'Loading ...'
     else
-      $ AppLayout, { title: props.post.data.title, description: props.post.data.subTitle} , =>
+      $ AppLayout, { title: props.post.data.title, description: props.post.data.subTitle, primary: yes} , =>
         $ 'main', { className: 'container showpage', id: 'contact-page' }, =>
+          $ 'h4', { className: 'allposts-transition'}, =>
+            $ 'span', {style: {display: 'block', fontSize: '3rem', textDecoration: 'underline' }}, 'CONTACT ME'
           $ 'a', { className: 'btn btn-dark btn-block', href: 'mailto:boss@bigpoppacode.io'}, =>
             $ 'h4', { className: 'motto email' }, =>
               $.text 'Click Here to Email Me at boss@bigpoppacode.io'
           $ 'a', { className: 'btn btn-dark btn-block', href: 'https://my.community.com/bigpoppacode'}, =>
             $ 'h4', { className: 'motto community' }, =>
               $.text 'Click Here or Text +14049620908 To Sign Up For Text Updates/Chat With Me'
-          $ FullBlog, { post: props.post }
+          $ 'span', { className: 'btn btn-dark btn-block' }, =>
+            $ 'h4', { className: 'motto community'}, """
+              Mail Me at:
+              3015 RN Martin Street #104, East Point, GA 30344, United States
+            """
+          $ PillarContent, { post: props.post }
           $ 'h1', { style: { textAlign: 'center' }}, =>
-            $.text 'Book An Appointment'
-          $ 'div', { className: 'calendly-inline-widget', 'data-url': 'https://calendly.com/arthurbernier', style: { minWidth: '320px', height: '630px'}}
+            $.text 'Book An Appointment With Me'
+          $ 'div', { className: 'calendly-inline-widget', 'data-url': 'https://calendly.com/arthurbernier', style: { width: '100%', height: '700px', overflow: 'hidden' }}
+
+
 
   )
 

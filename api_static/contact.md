@@ -1,12 +1,11 @@
 ---
-title: 'Contact Me'
+title: ' '
 subTitle: ''
 excerpt: ''
-featureImage: '/img/me.png'
+featureImage: '/img/contactme.png'
 date: '10/21/21'
 ---
 
-# Contact Me via :
 
 | Property | Description | Link |
 | ------------------ | ------------------------------------------ |  --------------------- |

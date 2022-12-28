@@ -4,9 +4,8 @@ React = require 'react'
 
 
 
-HeroBanner = ->
+PrimaryHeader = ->
   $ 'header',{ className: 'app-banner-primary'}, =>
     $ 'div', { className: 'cover' }
     $ 'img', { className: 'logo', src: '/img/logo.png'}
-
-module.exports = HeroBanner
+module.exports = PrimaryHeader

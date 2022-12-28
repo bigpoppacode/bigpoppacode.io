@@ -6,8 +6,9 @@ React = require 'react'
 
 AppHeader = ->
   $ 'header',{ className: 'app-header'}, =>
-    $ 'h1', 'BigPoppaCode.io'
-    $ 'h4', { className: 'subTitle' },'Built with MambaScript'
+    $ 'h1', =>
+      $.text 'BigPoppaCode.io'
+      $ 'div', { className: 'subTitle' },'Built with MambaScript'
     $ 'div', { className: 'cover' }
     $ 'h4', { className: 'motto' }, =>
       $.text '''

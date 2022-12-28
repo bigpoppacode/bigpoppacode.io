@@ -8,6 +8,7 @@ AppMobileNavBar = require './AppMobileNavBar.mamba'
 AppFooter = require './AppFooter.mamba'
 PopUpMenu = require './PopUpMenu.mamba'
 HeroBanner = require './HeroBanner.mamba'
+PrimaryHeader = require './PrimaryHeader.mamba'
 
 AppLayout = (props)->
   $ 'html', =>
@@ -17,6 +18,10 @@ AppLayout = (props)->
       $ 'meta', { name: 'description', content: props.description}
       $ 'link', { rel:'stylesheet', href: '/css/styles.css' }
       $ 'link', { rel:'stylesheet', href: '/prism.css' }
+      $ 'link', { rel:"apple-touch-icon", sizes:"180x180", href:"/apple-touch-icon.png"}
+      $ 'link', { rel:"icon", type:"image/png", sizes:"32x32", href:"/favicon-32x32.png"}
+      $ 'link', { rel:"icon", type: "image/png", sizes:"16x16", href: "/favicon-16x16.png"}
+      $ 'link', { rel:"manifest", href:"/site.webmanifest"}
     $ 'body', =>
       $ 'div', { className: 'app-layout' }, =>
         $ PopUpMenu
@@ -24,6 +29,8 @@ AppLayout = (props)->
           $ AppHeader
         if props.banner
           $ HeroBanner
+        if props.primary
+          $ PrimaryHeader
         $ AppNavBar
         $ Fragment, props.children
         $ AppFooter

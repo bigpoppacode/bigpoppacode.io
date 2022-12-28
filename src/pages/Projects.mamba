@@ -2,7 +2,7 @@ Decision = require 'mambascript/decision'
 React = require 'react'
 { useState, useEffect, Fragment } = require 'react'
 $ = Decision(React).$
-FullBlog = require '../components/FullBlog.mamba'
+PillarContent = require '../components/PillarContent.mamba'
 # { Link } = require 'react-router-mambascript'
 AppLayout = require '../layout/AppLayout.mamba'
 
@@ -11,11 +11,11 @@ Projects = (props)->
     unless Object.keys(props.post).length
       $ 'h1', 'Loading ...'
     else
-      $ AppLayout, { title: props.post.data.title, description: props.post.data.subTitle} , =>
+      $ AppLayout, { title: props.post.data.title, description: props.post.data.subTitle, primary: yes} , =>
         $ 'main', {id: 'projects-page', className: 'container showpage' }, =>
-         $ FullBlog, { post: props.post }
-         $ 'a', { href: '/' }, =>
-           $.text 'Home Page'
+          $ 'h4', { className: 'allposts-transition'}, =>
+            $ 'span', {style: {display: 'block', fontSize: '3rem', textDecoration: 'underline' }}, 'PROJECTS'
+          $ PillarContent, { post: props.post }
 
   )
 
