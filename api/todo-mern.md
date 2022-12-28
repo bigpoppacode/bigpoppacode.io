@@ -19,6 +19,8 @@ CSS: Presentation
 
 JS: Functionality
 
+![](/img/htmlcssjs.gif)
+
 # A different way of Separating Concerns with Component Driven Development
 ![components](https://media.git.generalassemb.ly/user/15881/files/c8fa3780-92ec-11ea-8b7c-8bf723456c19)
 
@@ -159,7 +161,7 @@ const [counter, setCounter] = useState(0)
 
 So a simple counter component would look like this...
 
-```jsx
+```js
 import { useState } from "react"
 
 export default function Counter(props) {
@@ -228,7 +230,7 @@ setState(updatedState)
 
 Here is our counter component from earlier with a console.log and second piece of state.
 
-```jsx
+```js
 import { useState } from "react"
 
 export default function Counter(props) {
@@ -274,7 +276,7 @@ This is where the useEffect hook comes into play. This hook is a function that t
 - A function that will be run immediately when the component loads and anytime any value in the second argument changes
 - An array of values, when they change the function will run again. Usually an empty array if you never want the function to run again.
 
-```jsx
+```js
 import { useState, useEffect } from "react"
 
 export default function Counter(props) {
@@ -316,7 +318,7 @@ So notice the useEffect receives a function that executes our log, and we also g
 
 useEffect is more regularly used for API calls. Usually you'll call the API, get the data then update state inside a useEffect to prevent an infinite loop from occurring.
 
-```jsx
+```js
 const getSomethingFromAPI = async(url) => {
  try {
   const response = await fetch(url)
@@ -366,7 +368,10 @@ ALLLLLLL MY STUDENTS ALWAYS end up being asked at some point in the interview pr
 
 # In this video we will be using CSS Modules
 
-A **CSS Module** is a CSS file in which all class names and animation names are scoped locally by default. All URLs (`url(...)`) and `@imports` are in module request format (`./xxx` and `../xxx` means relative, `xxx` and `xxx/yyy` means in modules folder, i. e. in `node_modules`).
+
+CSS Modules in JavaScript is a way of writing modularized CSS code, which is locally scoped and composable. This means that each CSS file can only be accessed within the module it is defined in, allowing for better modularity, which makes styles more maintainable and reusable. The syntax for CSS Modules is the same as regular CSS, but with a few extra features. The main feature is the use of the :local() selector, which allows you to assign a unique class name to a given style rule. This unique class name is then used in the HTML file to reference the specific style. This makes it easier to avoid naming collisions and keep code organized.
+
+In a **CSS Module** all class names and animation names are scoped locally by default. All URLs (`url(...)`) and `@imports` are in module request format (`./xxx` and `../xxx` means relative, `xxx` and `xxx/yyy` means in modules folder, i. e. in `node_modules`).
 
 CSS Modules compile to a low-level interchange format called ICSS or [Interoperable CSS](https://github.com/css-modules/icss), but are written like normal CSS files:
 
@@ -426,13 +431,18 @@ export default function ComponentName(props){
   )
 }
 ```
-## Why?
+## SCSS
+
+SCSS (Sassy CSS) is a preprocessor language that is used to extend the capabilities of CSS. It provides features like variables, nesting, mixins, and functions to help make CSS easier to maintain and extend. SCSS code is compiled into regular CSS code, which is then used to style the web page.
+
+## Why CSS Modules with SCSSS?
 
 **modular** and **reusable** CSS!
 
 * No more conflicts.
 * Explicit dependencies.
 * No global scope.
+* Built in Specificity with nesting
 
 ## CSS Modules Examples and Sources
 
