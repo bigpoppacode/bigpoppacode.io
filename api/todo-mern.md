@@ -355,4 +355,89 @@ ALLLLLLL MY STUDENTS ALWAYS end up being asked at some point in the interview pr
 
 ## Part 2 Using Components to Properly Separate Concerns
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_oOXfYrVGHs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[GitHub Code](https://github.com/arthurbernierjr/todoyoutubepart2)
+
 ## Part 3 Using CSS Modules to Properly Style Components
+
+# In this video we will be using CSS Modules
+
+A **CSS Module** is a CSS file in which all class names and animation names are scoped locally by default. All URLs (`url(...)`) and `@imports` are in module request format (`./xxx` and `../xxx` means relative, `xxx` and `xxx/yyy` means in modules folder, i. e. in `node_modules`).
+
+CSS Modules compile to a low-level interchange format called ICSS or [Interoperable CSS](https://github.com/css-modules/icss), but are written like normal CSS files:
+
+``` css
+/* style.css */
+.className {
+  color: green;
+}
+```
+
+When importing the **CSS Module** from a JS Module, it exports an object with all mappings from local names to global names.
+
+``` js
+import styles from "./style.css";
+// import { className } from "./style.css";
+
+element.innerHTML = '<div class="' + styles.className + '">';
+```
+
+***or in React***
+
+
+```js
+import styles from './ComponentName.module.css'
+
+export default function ComponentName(props){
+  return (
+    <>
+      <div className={styles.className}>
+        Hello World
+      </div>
+    </>
+  )
+}
+```
+
+## Usage with preprocessors like SASS/SCSS
+
+```scss
+.card {
+  &Title {
+    color: green;
+  }
+}
+```
+
+```js
+import styles from './ComponentName.module.scss'
+
+export default function ComponentName(props){
+  return (
+    <>
+      <div className={styles.card}>
+        <h2 className={styles.cardTitle}>Green Text</h2>
+      </div>
+    </>
+  )
+}
+```
+## Why?
+
+**modular** and **reusable** CSS!
+
+* No more conflicts.
+* Explicit dependencies.
+* No global scope.
+
+## Examples
+
+* [css-modules/webpack-demo](https://github.com/css-modules/webpack-demo)
+* [outpunk/postcss-modules-example](https://github.com/outpunk/postcss-modules-example)
+* [Theming](docs/theming.md)
+* [css-modules/browserify-demo](https://github.com/css-modules/browserify-demo)
+* [x-team/starting-css-modules](https://github.com/x-team/starting-css-modules)
+
+## Source
+* [css modules readme](https://github.com/css-modules/css-modules/blob/master/README.md)
