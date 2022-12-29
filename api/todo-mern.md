@@ -371,6 +371,12 @@ ALLLLLLL MY STUDENTS ALWAYS end up being asked at some point in the interview pr
 
 CSS Modules in JavaScript is a way of writing modularized CSS code, which is locally scoped and composable. This means that each CSS file can only be accessed within the module it is defined in, allowing for better modularity, which makes styles more maintainable and reusable. The syntax for CSS Modules is the same as regular CSS, but with a few extra features. The main feature is the use of the :local() selector, which allows you to assign a unique class name to a given style rule. This unique class name is then used in the HTML file to reference the specific style. This makes it easier to avoid naming collisions and keep code organized.
 
+<div class="iframe-container">
+<iframe src="https://www.youtube.com/embed/OUBVBgPbyNA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+[GitHub Code](https://github.com/arthurbernierjr/todoyoutubepart3)
+
 In a **CSS Module** all class names and animation names are scoped locally by default. All URLs (`url(...)`) and `@imports` are in module request format (`./xxx` and `../xxx` means relative, `xxx` and `xxx/yyy` means in modules folder, i. e. in `node_modules`).
 
 CSS Modules compile to a low-level interchange format called ICSS or [Interoperable CSS](https://github.com/css-modules/icss), but are written like normal CSS files:
