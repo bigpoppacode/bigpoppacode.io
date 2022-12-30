@@ -6,14 +6,17 @@
 @import "bs";
 @import "grid";
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60011, 0 0 40px #e60011, 0 0 50px #e60011, 0 0 60px #e60011, 0 0 70px #e60011;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px rgba(0,77,0, 0.7), 0 0 50px rgba(0,77,0, 0.7), 0 0 60px rgba(0,77,0, 0.7), 0 0 70px rgba(0,77,0, 0.7), 0 0 80px rgba(0,77,0, 0.7);
-  }
+@mixin animate($animation,$duration,$method,$times, $last){
+    animation: $animation $duration $method $times $last;
 }
+
+@mixin keyframes($name){
+    @keyframes #{$name}{
+        @content;
+    }
+}
+
+
 
 $custom-colors: (
   "elegant-purple": #8E6E95,
@@ -700,9 +703,14 @@ h3 + ol {
   font-size: 1.5rem;
   text-align: center;
   li {
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-   -moz-animation: glow 1s ease-in-out infinite alternate;
-   animation: glow 1s ease-in-out infinite alternate;
-
+    @include keyframes(glow) {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60011, 0 0 40px #e60011, 0 0 50px #e60011, 0 0 60px #e60011, 0 0 70px #e60011;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px rgba(0,77,0, 0.7), 0 0 50px rgba(0,77,0, 0.7), 0 0 60px rgba(0,77,0, 0.7), 0 0 70px rgba(0,77,0, 0.7), 0 0 80px rgba(0,77,0, 0.7);
+      }
+    }
+   @include animate(glow, 1s, ease-in-out, infinite, alternate);
   }
 }
