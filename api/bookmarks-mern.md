@@ -140,6 +140,7 @@ link
 
 <section class="list-block">
 
+## Steps
 1. Use Create React App to Build App
 1. Add .env, server.js, .env.example, Models, Controllers, Routes and Config Folders
 1. Add Mongoose, Morgan, Bcrypt and Jsonwebtoken
@@ -158,6 +159,7 @@ link
 
 <section class="list-block">
 
+## Steps
 1. Login, SignUp, CreateBookmark, ListBookmarksByUser, DeleteBookmark, UpdateBookmark Functionality
 1. Login/SignUp Page and functionality
 1. BookmarksPage
@@ -184,6 +186,7 @@ link
 
 <section class="list-block">
 
+## Steps
 1. Add Sass
 1. Style Login/SignUp Page
 1. Style Bookmark
