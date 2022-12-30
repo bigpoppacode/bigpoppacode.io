@@ -109,13 +109,14 @@ export default function Form(props) {
 
 ## Part 1 Making The API & Connecting it to a React App
 
-| **URL** | **HTTP Verb** |  **Action**| **Notes**|
-|------------|-------------|------------|----------
-| /api/bookmarks/         | GET       | index  | INDEX when a user types `localhost:3001/api/bookmarks` in browser this route shows a `list` or `index` of all bookmarks
-| /api/bookmarks/:id      | DELETE    | destroy  |  DELETE initiates a delete request through a form submission with `action = http://localhost:3001/api/bookmarks/:idOfbookmark` and allows the application the ability to `delete` a bookmark
-| /api/bookmarks/:id      | PUT | update | UPDATE initiates a put request through a form submission with `action = http://localhost:3001/api/bookmarks/:idOfbookmark` and allows the application the ability to `Update` data about a bookmark
-| /api/bookmarks          | POST      | create  |  CREATE initiates a post request through a form submission with `action = http://localhost:3001/api/bookmarks/` and allows the application the ability to `Create` a bookmark      
-| /api/bookmarks/:id      | GET       | show  | SHOW when a user types `localhost:3001/api/bookmarks/:idOfbookmark` shows the user an `Individual` bookmark in the browser
+| **URL** | **HTTP Verb** |  **Action**|
+|------------|-------------|------------|
+| /api/bookmarks/:id | DELETE    | destroy bookmark  |  
+| /api/bookmarks/:id | PUT | update bookmark |
+| /api/bookmarks | POST      | create bookmark  |        
+| /api/users/login | POST | Login User |
+| /api/users/ | POST | Sign Up User |
+| /api/users/bookmarks | GET | Get Users Bookmarks |
 
 ## User
 ```
@@ -136,7 +137,7 @@ link
 1. Add Mongoose, Morgan, Bcrypt and Jsonwebtoken
 1. Build Server and config/database
 1. Build Bookmark Model and User Model
-1. Build Controllers for Bookmark and User 
+1. Build Controllers for Bookmark and User
 1. Build Router For Bookmarks and User
 1. Test Login, SignUp, CreateBookmark, ListBookmarksByUser, DeleteBookmark, UpdateBookmark  
 
