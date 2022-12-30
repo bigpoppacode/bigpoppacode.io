@@ -109,6 +109,8 @@ export default function Form(props) {
 
 ## Part 1 Making The API & Connecting it to a React App
 
+<center>
+
 | **URL** | **HTTP Verb** |  **Action**|
 |------------|-------------|------------|
 | /api/bookmarks/:id | DELETE    | destroy bookmark  |  
@@ -118,19 +120,25 @@ export default function Form(props) {
 | /api/users/ | POST | Sign Up User |
 | /api/users/bookmarks | GET | Get Users Bookmarks |
 
+</center>
+
 ## User
-```
+
+```js
 name
 email
 password
 bookmarks ref of bookmarks
 ```
 ## Bookmark
-```
+
+```js
 title
 link
 ```
 
+
+<section class="list-block">
 
 1. Use Create React App to Build App
 1. Add .env, server.js, .env.example, Models, Controllers, Routes and Config Folders
@@ -141,10 +149,14 @@ link
 1. Build Router For Bookmarks and User
 1. Test Login, SignUp, CreateBookmark, ListBookmarksByUser, DeleteBookmark, UpdateBookmark  
 
+</section>
+
 ![](/img/3.png)
 
 
 ## Part 2 Using Components to Properly Separate Concerns
+
+<section class="list-block">
 
 1. Login, SignUp, CreateBookmark, ListBookmarksByUser, DeleteBookmark, UpdateBookmark Functionality
 1. Login/SignUp Page and functionality
@@ -158,6 +170,8 @@ link
 1. Delete Via Button
 1. Update Via Conditionally Rendering Input Field Adding New Text and pressing enter
 
+</section>
+
 ```js
 { showUpdateInput ?
   <input type='text' defaultValue={bookmark.title} onKeyPress={(e) => e.key === 'Enter' && updateBookmark(e, bookmark._id, setShowUpdateInput) }/>:
@@ -168,10 +182,14 @@ link
 
 ## Part 3 Using CSS Modules to Properly Style Components
 
+<section class="list-block">
+
 1. Add Sass
 1. Style Login/SignUp Page
 1. Style Bookmark
 1. Style BookmarkList
 1. Create Universal Body Styling
+
+</section>
 
 ![](/img/5.png)
