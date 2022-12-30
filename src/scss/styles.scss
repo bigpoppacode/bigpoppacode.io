@@ -683,3 +683,23 @@ section.list-block {
   align-items: center;
   font-size: 1.5rem;
 }
+h3 + ol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+ -moz-animation: glow 1s ease-in-out infinite alternate;
+ animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60011, 0 0 40px #e60011, 0 0 50px #e60011, 0 0 60px #e60011, 0 0 70px #e60011;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px rgba(0,77,0, 0.7), 0 0 50px rgba(0,77,0, 0.7), 0 0 60px rgba(0,77,0, 0.7), 0 0 70px rgba(0,77,0, 0.7), 0 0 80px rgba(0,77,0, 0.7);
+  }
+}
