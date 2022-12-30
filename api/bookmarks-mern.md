@@ -138,9 +138,7 @@ link
 ```
 
 
-<section class="list-block">
-
-## Steps
+### Steps
 1. Use Create React App to Build App
 1. Add .env, server.js, .env.example, Models, Controllers, Routes and Config Folders
 1. Add Mongoose, Morgan, Bcrypt and Jsonwebtoken
@@ -150,16 +148,14 @@ link
 1. Build Router For Bookmarks and User
 1. Test Login, SignUp, CreateBookmark, ListBookmarksByUser, DeleteBookmark, UpdateBookmark  
 
-</section>
+
 
 ![](/img/3.png)
 
 
 ## Part 2 Using Components to Properly Separate Concerns
 
-<section class="list-block">
-
-## Steps
+### Steps
 1. Login, SignUp, CreateBookmark, ListBookmarksByUser, DeleteBookmark, UpdateBookmark Functionality
 1. Login/SignUp Page and functionality
 1. BookmarksPage
@@ -172,7 +168,6 @@ link
 1. Delete Via Button
 1. Update Via Conditionally Rendering Input Field Adding New Text and pressing enter
 
-</section>
 
 ```js
 { showUpdateInput ?
@@ -184,15 +179,12 @@ link
 
 ## Part 3 Using CSS Modules to Properly Style Components
 
-<section class="list-block">
-
-## Steps
+### Steps
 1. Add Sass
 1. Style Login/SignUp Page
 1. Style Bookmark
 1. Style BookmarkList
 1. Create Universal Body Styling
 
-</section>
 
 ![](/img/5.png)
