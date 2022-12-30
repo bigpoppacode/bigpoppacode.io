@@ -105,14 +105,72 @@ export default function Form(props) {
 }
 ```
 
+
+
 ## Part 1 Making The API & Connecting it to a React App
+
+| **URL** | **HTTP Verb** |  **Action**| **Notes**|
+|------------|-------------|------------|----------
+| /api/bookmarks/         | GET       | index  | INDEX when a user types `localhost:3001/api/bookmarks` in browser this route shows a `list` or `index` of all bookmarks
+| /api/bookmarks/:id      | DELETE    | destroy  |  DELETE initiates a delete request through a form submission with `action = http://localhost:3001/api/bookmarks/:idOfbookmark` and allows the application the ability to `delete` a bookmark
+| /api/bookmarks/:id      | PUT | update | UPDATE initiates a put request through a form submission with `action = http://localhost:3001/api/bookmarks/:idOfbookmark` and allows the application the ability to `Update` data about a bookmark
+| /api/bookmarks          | POST      | create  |  CREATE initiates a post request through a form submission with `action = http://localhost:3001/api/bookmarks/` and allows the application the ability to `Create` a bookmark      
+| /api/bookmarks/:id      | GET       | show  | SHOW when a user types `localhost:3001/api/bookmarks/:idOfbookmark` shows the user an `Individual` bookmark in the browser
+
+## User
+```
+name
+email
+password
+bookmarks ref of bookmarks
+```
+## Bookmark
+```
+title
+link
+```
+
+
+1. Use Create React App to Build App
+1. Add .env, server.js, .env.example, Models, Controllers, Routes and Config Folders
+1. Add Mongoose, Morgan, Bcrypt and Jsonwebtoken
+1. Build Server and config/database
+1. Build Bookmark Model and User Model
+1. Build Controllers for Bookmark and User 
+1. Build Router For Bookmarks and User
+1. Test Login, SignUp, CreateBookmark, ListBookmarksByUser, DeleteBookmark, UpdateBookmark  
 
 ![](/img/3.png)
 
+
 ## Part 2 Using Components to Properly Separate Concerns
+
+1. Login, SignUp, CreateBookmark, ListBookmarksByUser, DeleteBookmark, UpdateBookmark Functionality
+1. Login/SignUp Page and functionality
+1. BookmarksPage
+1. CreateBookmark Component and use `UseRef for form`
+1. Verify created bookmarks get added to list  
+1. BookmarkList Component
+1. When Bookmark gets clicked it opens up Bookmark in a new tab
+1. Bookmark Component  
+1. Update & Delete Bookmark Functionality applied
+1. Delete Via Button
+1. Update Via Conditionally Rendering Input Field Adding New Text and pressing enter
+
+```js
+{ showUpdateInput ?
+  <input type='text' defaultValue={bookmark.title} onKeyPress={(e) => e.key === 'Enter' && updateBookmark(e, bookmark._id, setShowUpdateInput) }/>:
+  <span onClick={() => setShowUpdateInput(true)}>{bookmark.title}</span>}
+```  
 
 ![](/img/4.png)
 
 ## Part 3 Using CSS Modules to Properly Style Components
+
+1. Add Sass
+1. Style Login/SignUp Page
+1. Style Bookmark
+1. Style BookmarkList
+1. Create Universal Body Styling
 
 ![](/img/5.png)
