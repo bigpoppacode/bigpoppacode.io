@@ -184,11 +184,11 @@ export default function Counter(props) {
 }
 ```
 
-That's as simple as it gets. What happens when the button is clicked.
+### That's as simple as it gets. What happens when the button is clicked.
 
 - setCounter is passed the current value + 1
 - React then compares this new value to the old value of counter
-- If they are the same, React does nothing (beware of references as values when it comes to objects and arrays, make sure you understand pass by value vs pass by reference remeber the `arthurshouse taraleeshouse example from unit 1`)
+- If they are the same, React does nothing (beware of references as values when it comes to objects and arrays, make sure you understand pass by value vs pass by reference remember the `arthurshouse taraleeshouse example`)
 - If they are different then React updates its VirtualDOM based on a re-render of the component and its children
 - It then compares the virtualDOM to the real browser DOM and only updates the places in which they differ.
 

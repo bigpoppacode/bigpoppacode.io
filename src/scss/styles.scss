@@ -695,7 +695,7 @@ section.list-block {
   align-items: center;
   font-size: 1.5rem;
 }
-h3 + ol, h2 + ol {
+h3 + ol, h2 + ol, h3 + ul, h2 + ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
