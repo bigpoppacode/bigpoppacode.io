@@ -149,9 +149,11 @@ link
 1. Test Login, SignUp, CreateBookmark, ListBookmarksByUser, DeleteBookmark, UpdateBookmark  
 
 
+<div class="iframe-container">
+<iframe src="https://www.youtube.com/embed/ZUiLrrf2qVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-![](/img/3.png)
-
+[Github Code](https://github.com/arthurbernierjr/bookmarks-yt-part1)
 
 ## Part 2 Using Components to Properly Separate Concerns
 
