@@ -1,8 +1,8 @@
 ---
-title: 'MERN Stack CAFE'
+title: 'MERN E-Comm App'
 subTitle: 'Building A Simple Full Crud MERN App'
 excerpt: 'I want to be the best. I want to be the best simple and plain, thats what drives me - Kobe Bryant'
-featureImage: '/img/6.png'
+featureImage: '/img/mern-ecomm.png'
 date: '12/25/22'
 order: 3
 ---
@@ -18,14 +18,14 @@ order: 3
 ![](/img/mern2.png)
 
 
-## Part 1 Making The API & Connecting it to a React App
+## Part 1 Making The Models and Setting Up Folder Structure
 
-![](/img/6.png)
+![](/img/mern-ecomm1.png)
 
-## Part 2 Using Components & Services To Separate Concerns and Write DRY CODE
+## Part 2 Building Controllers, Routes, Sever, and Basic Components
 
-![](/img/7.png)
+![](/img/mern-ecomm2.png)
 
-## Part 3 Using CSS Modules to Properly Style Components
+## Part 3 Implementing React Router and Styling Components
 
-![](/img/8.png)
+![](/img/mern-ecomm3.png)
