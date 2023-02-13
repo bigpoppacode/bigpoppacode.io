@@ -6,7 +6,7 @@
 const gulp = require('gulp');
 
 // Explanation for Students ---- This is for compiling SASS, we haven't learned SASS yet but this is as good a chance as any to to talk about how we could compile it.
-const sass = require('gulp-sass')(require('node-sass'));
+const sass = require('gulp-sass')(require('sass'));
 
 // Use Nodemon programatically
 const nodemon = require('gulp-nodemon');

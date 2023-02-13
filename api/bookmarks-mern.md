@@ -2,7 +2,7 @@
 title: 'Bookmarks MERN'
 subTitle: 'Building A Simple Full Crud MERN App'
 excerpt: 'I want to be the best. I want to be the best simple and plain, thats what drives me - Kobe Bryant'
-featureImage: '/img/3.png'
+featureImage: 'https://res.cloudinary.com/dkqojunzz/image/upload/v1676242311/3_mfqkpu.webp'
 date: '12/25/22'
 order: 2
 ---
@@ -149,11 +149,11 @@ link
 1. Test Login, SignUp, CreateBookmark, ListBookmarksByUser, DeleteBookmark, UpdateBookmark  
 
 
-<div class="iframe-container">
-<iframe src="https://www.youtube.com/embed/ZUiLrrf2qVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+[![](https://res.cloudinary.com/dkqojunzz/image/upload/v1676242311/3_mfqkpu.webp)](https://youtu.be/ZUiLrrf2qVw)
 
-[Github Code](https://github.com/arthurbernierjr/bookmarks-yt-part1)
+### View [Github Code Here](https://github.com/arthurbernierjr/bookmarks-yt-part1)
+
+<hr/>
 
 ## Part 2 Using Components to Properly Separate Concerns
 
@@ -177,7 +177,11 @@ link
   <span onClick={() => setShowUpdateInput(true)}>{bookmark.title}</span>}
 ```  
 
-![](/img/4.png)
+[![](https://res.cloudinary.com/dkqojunzz/image/upload/v1676242311/4_lhawtf.webp)](https://youtu.be/_9FZiXKZTqA)
+
+### View [Github Code Here](https://github.com/arthurbernierjr/bookmarks-yt-part2)
+
+<hr/>
 
 ## Part 3 Using CSS Modules to Properly Style Components
 
@@ -189,4 +193,9 @@ link
 1. Create Universal Body Styling
 
 
-![](/img/5.png)
+
+[![](https://res.cloudinary.com/dkqojunzz/image/upload/v1676242311/5_ehuish.webp)](https://youtu.be/GeHE_Wv8ml4)
+
+### View [Github Code Here](https://github.com/arthurbernierjr/bookmarks-yt-part3)
+
+<hr/>
