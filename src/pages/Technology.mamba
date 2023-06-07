@@ -17,7 +17,7 @@ Blog = (props)->
         return $ 'h1', 'No More Posts...'
       else
         $ 'h4', { className: 'allposts-transition'}, =>
-          $ 'span', {style: {display: 'block', fontSize: '3rem', textDecoration: 'underline' }}, 'LESSONS'
+          $ 'span', {style: {display: 'block', fontSize: '3rem', textDecoration: 'underline' }}, 'Technology'
           $ 'br'
           $ 'br'
           $.text """
