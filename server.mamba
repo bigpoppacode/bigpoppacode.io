@@ -7,6 +7,7 @@ app = express()
 fs = require 'fs'
 path = require 'path'
 json = "#{__dirname}/json"
+pd = "#{__dirname}/json_pd"
 pillar = "#{__dirname}/json_pillar"
 PORT = process.env.PORT || 8089
 matter = require 'gray-matter'
@@ -58,22 +59,31 @@ getFirstPost = (req, res, next) ->
       res.locals = JSON.parse(file)
       next()
 
-app.get '/', getFirstPost, (req, res) ->
+app.get '/', (req, res) ->
   fs.readFile "#{json}/all.json", 'utf8', (err, file) ->
     if err
       console.error(err)
     else
-      res.render 'pages/Home', {
-        posts: [ res.locals, JSON.parse(file).slice(0,10)...]
-      }
+      res.render 'pages/Home'
+
 app.get '/allposts', (req, res) ->
   fs.readFile "#{json}/all.json", 'utf8', (err, file) ->
     if err
       console.error(err)
     else
-      res.render 'pages/Blog', {
+      res.render 'pages/Technology', {
         posts: JSON.parse(file).sort((a,b) => a.data.order  - b.data.order)
       }
+
+app.get '/pd-all', (req, res) ->
+  fs.readFile "#{pd}/all.json", 'utf8', (err, file) ->
+    if err
+      console.error(err)
+    else
+      res.render 'pages/PersonalDev', {
+        posts: JSON.parse(file).sort((a,b) => a.data.order  - b.data.order)
+      }
+
 app.get '/about', (req, res) ->
   fs.readFile "#{json}_static/about.json", 'utf8', (err, file) ->
     if err
@@ -125,7 +135,14 @@ app.get '/:post', (req, res) ->
       res.render 'pages/Show', {
         post: JSON.parse(file)
       }
-
+app.get '/pd/:post', (req, res) ->
+  fs.readFile "#{pd}/#{req.params.post}.json", 'utf8', (err, file) ->
+    if err
+      console.error(err)
+    else
+      res.render 'pages/Show', {
+        post: JSON.parse(file)
+      }
 app.get '/api/posts', (req, res) ->
   fs.readFile "#{json}/all.json", 'utf8', (err, file) ->
     if err

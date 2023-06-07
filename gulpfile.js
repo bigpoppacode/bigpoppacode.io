@@ -52,6 +52,7 @@ gulp.task('default', (cb) => {
  	gulp.watch('./src/scss/**/*',  gulp.task('styles'));
 	gulp.watch('./api/**/*',  gulp.task('build'));
 	gulp.watch('./api_static/**/*',  gulp.task('build'));
+	gulp.watch('./api_pd/**/*',  gulp.task('build'));
 	gulp.watch('./src/main.mamba',  gulp.task('build'));
 	// LISTEN FOR WHEN TO RELOAD PAGES
 	gulp

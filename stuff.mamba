@@ -2,3 +2,19 @@ module X
   @x = 3
 
 present X.x
+
+
+# a :: Int?
+# a = null 
+
+# b :: Int 
+
+# b = a
+
+# # present b
+
+yo = ->
+  present 'yerr'
+
+
+yo()

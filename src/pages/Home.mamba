@@ -21,11 +21,6 @@ Home = (props)->
 
   useEffect(fetchPost, [])
 ###
-  Posts = pureComponent (data) ->
-    data.map((item) ->
-      $ PostContent, { post: item }
-    )
-
   return (
     $ AppLayout, { title: "BigPoppaCode.io", description: 'Helping You Realize Your Full Potential Through, Technology, and Personal Development', header: yes }
   )

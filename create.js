@@ -6,6 +6,9 @@ const apiPillar = `${__dirname}/api-pillar`
 const json = `${__dirname}/json`
 const jsonStatic = `${__dirname}/json_static`
 const jsonPillar = `${__dirname}/json_pillar`
+const jsonPD =  `${__dirname}/json_pd`
+const apiPD = `${__dirname}/api_pd`
+
 const matter = require('gray-matter');
 const showdown  = require('showdown'),
     converter = new showdown.Converter()
@@ -44,3 +47,4 @@ async function build (api, json, all) {
 }
 
 build(api, json, true).then(() => build(apiStatic, jsonStatic, false)).then(() => build(apiPillar, jsonPillar, false))
+.then(() => build(apiPD,jsonPD, true))

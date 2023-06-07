@@ -4,24 +4,22 @@ React = require 'react'
 $ = Decision(React).$
 # { Link } = require 'react-router-mambascript'
 
-FullBlog= (props) ->
+PostContent= (props) ->
   { post } = props
   return (
-    $ 'div',{ className: 'full-blog container'}, =>
-      $ 'div', { className: 'card' }, =>
-        $ 'a', { href: "/#{post._id}" }, =>
-          $ 'h2', { className: 'card-title'}, =>
-            $.text "#{post.data.title}"
+    $ 'article',{ className:'post-content' }, =>
+      $ 'a', { href: "/pd/#{post._id}", className: 'card', style:{ 'zIndex': 2 } }, =>
+        $ 'h5', { className: 'card-header' }, =>
+          $.text post.data.title
         $ 'div', { className: 'card-body' }, =>
+            $ 'img', { src: post.data.featureImage }
             $ 'h5', { className: 'card-title'}, post.data.subTitle
-            $ 'div', { className: 'card-img-container'}, =>
-              $ 'img', { className: 'card-img', src: post.data.featureImage, alt: post.data.title }
-            $ 'div', { className: 'container mx-auto', dangerouslySetInnerHTML: { __html: post.content }}
+            $ 'p', { className: 'card-text'}, post.data.excerpt
+
+
   )
 
-
-module.exports = FullBlog
-
+module.exports = PostContent
 
 ###
 <div class="card">
